@@ -1,0 +1,32 @@
+# 테마 설정
+remote_theme: 'mmistakes/minimal-mistakes@4.24.0'
+
+# 사이트 설정
+title: 'Inside Jinseok'
+name: 'Jinseok Ock'
+description: 'Dev Blog'
+
+# 기본 설정
+locale: 'ko-KR'
+timezone: Asia/Seoul
+
+# 플러그인 설정
+plugins:
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-gist
+    - jekyll-feed
+    - jekyll-include-cache
+
+# 기본 레이아웃 설정
+defaults:
+    - scope:
+          path: ''
+          type: posts
+      values:
+          layout: single
+          author_profile: true
+          read_time: true
+          comments: true
+          share: true
+          related: true
