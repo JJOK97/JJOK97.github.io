@@ -1,25 +1,50 @@
 # 테마 설정
 remote_theme: 'mmistakes/minimal-mistakes@4.24.0'
+minimal_mistakes_skin: 'default' # 스킨 선택 (air, contrast, dark, dirt, mint, sunrise)
 
 # 사이트 설정
+locale: 'ko-KR'
 title: 'Inside Jinseok'
+title_separator: '-'
+subtitle: '개발 블로그'
 name: 'Jinseok Ock'
-description: 'Dev Blog'
+description: '개발 블로그입니다.'
+url: 'https://jjok97.github.io'
+baseurl: ''
+
+# 저자 설정
+author:
+    name: 'Jinseok Ock'
+    avatar: '/assets/images/profile.jfif'
+    bio: '개발자입니다.' # 간단한 소개
+    location: 'South Korea'
+    links:
+        - label: 'GitHub'
+          icon: 'fab fa-fw fa-github'
+          url: 'https://github.com/JJOK97'
+
+# 사이트 Footer 설정
+footer:
+    links:
+        - label: 'GitHub'
+          icon: 'fab fa-fw fa-github'
+          url: 'https://github.com/JJOK97'
 
 # 기본 설정
-locale: 'ko-KR'
-timezone: Asia/Seoul
+permalink: /:categories/:title/
+paginate: 5 # 한 페이지에 보여질 포스트 수
+paginate_path: /page:num/
 
-# 플러그인 설정
-plugins:
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-gist
-    - jekyll-feed
-    - jekyll-include-cache
+# 부가 기능 설정
+search: true # 검색 기능 활성화
 
-# 기본 레이아웃 설정
+# Collections
+include:
+    - _pages
+
+# 기본 Front Matter 설정
 defaults:
+    # _posts
     - scope:
           path: ''
           type: posts
@@ -30,3 +55,18 @@ defaults:
           comments: true
           share: true
           related: true
+    # _pages
+    - scope:
+          path: '_pages'
+          type: pages
+      values:
+          layout: single
+          author_profile: true
+
+# 플러그인 설정
+plugins:
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-gist
+    - jekyll-feed
+    - jekyll-include-cache
