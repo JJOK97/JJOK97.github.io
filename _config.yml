@@ -1,16 +1,16 @@
 # Default, Defaults
 markdown: redcarpet
 highlighter: pygments # or rouge or null
-exclude: ["node_modules", "gulpfile.js", "package.json"]
+exclude: ['node_modules', 'gulpfile.js', 'package.json']
 
 # Jekyll Defaults
-title: Artist Theme
-email: your-email@domain.com
+title: Inside Jinseok
+email: jsock414@gmail.com
 description: A small and simple site I made to test out Jekyll. Watch out! I'm going to make a material design theme next!
-baseurl: "http://localhost:3000" # the subpath of your site, e.g. /blog
+baseurl: '' # the subpath of your site, e.g. /blog
 
 # Where can people find your site?
-url: "http://localhost:3000"
+url: 'https://JIOK97.github.io'
 # When developing, set this ^ equal to whatever localhost you're using
 
 # Socail Media links
