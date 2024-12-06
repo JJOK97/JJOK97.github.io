@@ -286,24 +286,7 @@ function initPage() {
       });
     }
   }
-
-  // 페이지 active 관리 (기존 코드를 그대로 유지)
-  if (navigationLinks && pages && pages.length > 0) {
-    for (let i = 0; i < navigationLinks.length; i++) {
-      navigationLinks[i].addEventListener("click", function () {
-        for (let j = 0; j < pages.length; j++) {
-          if (this.getAttribute('data-page') === pages[j].dataset.page) {
-            pages[j].classList.add("active");
-            navigationLinks[i].classList.add("active");
-            window.scrollTo(0, 0);
-          } else {
-            pages[j].classList.remove("active");
-            navigationLinks[j].classList.remove("active");
-          }
-        }
-      });
-    }
-  }
+  
 }
 
 // DOMContentLoaded 시 초기 about 페이지 로드
