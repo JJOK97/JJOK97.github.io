@@ -159,8 +159,13 @@ function loadProjectDetail(file) {
       const filterList = projectsSection.querySelector('.filter-list');
       const filterSelectBox = projectsSection.querySelector('.filter-select-box');
 
+      const portfolioSection = document.querySelector('.portfolio');
+
+      const articleTitle = portfolioSection.querySelector('.article-title');
+
       if (!detailContainer || !projectList) return;
 
+      articleTitle.style.display = 'none';
       filterList.style.display = 'none';
       filterSelectBox.style.display = 'none';
       projectList.style.display = 'none';
