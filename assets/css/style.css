@@ -46,7 +46,7 @@
    */
 
     /* font-family */
-    --ff-poppins: 'Poppins', sans-serif;
+    --ff-poppins: 'Poppins', 'Jua', sans-serif;
 
     /* font-size */
     --fs-1: 24px;
@@ -1111,6 +1111,14 @@ main {
     background: var(--eerie-black-1);
     z-index: -1;
 }
+
+.blog-post-detail {
+    display: block !important;
+  }
+
+  article.blog-post-detail.active {
+    display: block;
+  }
 
 .blog-banner-box {
     width: 100%;

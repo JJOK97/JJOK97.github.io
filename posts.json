@@ -1,0 +1,47 @@
+{
+    "posts": [
+      {
+        "title": "Design conferences in 2022",
+        "date": "2022-02-23",
+        "category": "Design",
+        "image": "./assets/images/blog-1.jpg",
+        "file": "post1.html"
+      },
+      {
+        "title": "Best fonts every designer",
+        "date": "2022-02-23",
+        "category": "Design",
+        "image": "./assets/images/blog-2.jpg",
+        "file": "post2.html"
+      },
+      {
+        "title": "Design digest #80",
+        "date": "2022-02-23",
+        "category": "Design",
+        "image": "./assets/images/blog-3.jpg",
+        "file": "post3.html"
+      },
+      {
+        "title": "UI interactions of the week",
+        "date": "2022-02-23",
+        "category": "Design",
+        "image": "./assets/images/blog-4.jpg",
+        "file": "post4.html"
+      },
+      {
+        "title": "The forgotten art of spacing",
+        "date": "2022-02-23",
+        "category": "Design",
+        "image": "./assets/images/blog-5.jpg",
+        "file": "post5.html"
+      },
+      {
+        "title": "Design digest #79",
+        "date": "2022-02-23",
+        "category": "Design",
+        "image": "./assets/images/blog-6.jpg",
+        "file": "post6.html"
+      }
+    ]
+  }
+  
