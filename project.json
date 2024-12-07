@@ -1,55 +1,64 @@
 {
     "projects": [
       {
-        "title": "Finance",
+        "title": "Fitnect",
+        "date": "2022-02-23",
         "category": "Web development",
         "image": "./assets/images/project-1.jpg",
-        "file": "project1.html"
+        "file": "fitnect/index.html"
       },
       {
         "title": "Orizon",
+        "date": "2022-02-23",
         "category": "Web development",
         "image": "./assets/images/project-2.png",
         "file": "project2.html"
       },
       {
         "title": "Fundo",
+        "date": "2022-02-23",
         "category": "Web design",
         "image": "./assets/images/project-3.jpg",
         "file": "project3.html"
       },
       {
         "title": "Brawlhalla",
+        "date": "2022-02-23",
         "category": "Applications",
         "image": "./assets/images/project-4.png",
         "file": "project4.html"
       },
       {
         "title": "DSM.",
+        "date": "2022-02-23",
         "category": "Web design",
         "image": "./assets/images/project-5.png",
         "file": "project5.html"
       },
       {
         "title": "MetaSpark",
+        "date": "2022-02-23",
         "category": "Web design",
         "image": "./assets/images/project-6.png",
         "file": "project6.html"
       },
       {
         "title": "Summary",
+        "date": "2022-02-23",
         "category": "Web development",
         "image": "./assets/images/project-7.png",
         "file": "project7.html"
       },
       {
         "title": "Task Manager",
+        "date": "2022-02-23",
         "category": "Applications",
         "image": "./assets/images/project-8.jpg",
         "file": "project8.html"
       },
       {
         "title": "Arrival",
+        "date": "2022-02-23",
         "category": "Web development",
         "image": "./assets/images/project-9.png",
         "file": "project9.html"

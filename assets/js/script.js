@@ -59,11 +59,6 @@ function loadBlogPosts() {
               <img src="${post.image}" alt="${post.title}" loading="lazy">
             </figure>
             <div class="blog-content">
-              <div class="blog-meta">
-                <p class="blog-category">${post.category}</p>
-                <span class="dot"></span>
-                <time datetime="${post.date}">${new Date(post.date).toLocaleDateString()}</time>
-              </div>
               <h3 class="h3 blog-item-title">${post.title}</h3>
               <p class="blog-text">${post.description}</p>
             </div>
@@ -125,8 +120,12 @@ function loadProjects() {
               </div>
               <img src="${project.image}" alt="${project.title}" loading="lazy">
             </figure>
+              <div class="blog-meta">
+                <p class="blog-category">${project.category}</p>
+                <span class="dot"></span>
+                <time datetime="${project.date}">${new Date(project.date).toLocaleDateString()}</time>
+              </div>
             <h3 class="project-title">${project.title}</h3>
-            <p class="project-category">${project.category}</p>
           </a>
         `;
         projectList.appendChild(li);
@@ -138,14 +137,15 @@ function loadProjects() {
         });
       });
 
-      // 프로젝트 로드 후 필터 기능 초기화
       initializeFilters();
     })
     .catch(err => console.error("프로젝트 로딩 오류:", err));
 }
 
 function loadProjectDetail(file) {
-  fetch(`./pages/portfolio/${file}`)
+  const projectName = file.split('/')[0]; // fitnect/index.html -> fitnect
+  
+  fetch(`./pages/portfolio/${projectName}/index.html`)
     .then(res => res.text())
     .then(html => {
       const projectList = contentContainer.querySelector('#project-list');
@@ -164,8 +164,53 @@ function loadProjectDetail(file) {
       projectList.style.display = 'none';
       detailContainer.innerHTML = html;
       detailContainer.style.display = 'block';
+
+      initializeProjectNav(projectName);
+      loadProjectSection('overview', projectName);
     })
     .catch(err => console.error("프로젝트 상세 로딩 오류:", err));
+}
+
+function initializeProjectNav(projectName) {
+  const sectionBtns = document.querySelectorAll('[data-section-btn]');
+  
+  sectionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sectionBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const section = btn.getAttribute('data-section');
+      loadProjectSection(section, projectName);
+    });
+  });
+}
+
+function loadProjectSection(sectionName, projectName) {
+  fetch(`./pages/portfolio/${projectName}/${sectionName}.html`)
+    .then(res => res.text())
+    .then(html => {
+      const sectionContent = document.getElementById('section-content');
+      if (sectionContent) {
+        sectionContent.innerHTML = html;
+      }
+    })
+    .catch(err => console.error(`섹션 로딩 오류: ${sectionName}`, err));
+}
+
+function returnToPortfolio() {
+  const projectList = contentContainer.querySelector('#project-list');
+  const detailContainer = contentContainer.querySelector('#project-detail-container');
+  const projectsSection = document.querySelector('.projects');
+  const filterList = projectsSection.querySelector('.filter-list');
+  const filterSelectBox = projectsSection.querySelector('.filter-select-box');
+  const portfolioSection = document.querySelector('.portfolio');
+  const articleTitle = portfolioSection.querySelector('.article-title');
+
+  detailContainer.style.display = 'none';
+  articleTitle.style.display = 'block';
+  filterList.style.display = 'flex';
+  filterSelectBox.style.display = 'block';
+  projectList.style.display = 'grid';
 }
 
 function initializeFilters() {
