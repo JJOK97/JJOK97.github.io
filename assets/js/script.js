@@ -32,7 +32,7 @@ function loadPage(pageName) {
             }
 
             if (pageName === 'blog') {
-                loadBlogPosts();
+                loadBlogCategories();
             } else if (pageName === 'portfolio') {
                 loadProjects();
             }
@@ -45,63 +45,100 @@ function loadPage(pageName) {
         });
 }
 
-function loadBlogPosts() {
+function loadBlogCategories() {
     fetch('./posts.json')
         .then((res) => res.json())
         .then((data) => {
-            const postList = contentContainer.querySelector('#blog-posts-list');
-            if (!postList) return;
+            const categoriesList = document.getElementById('blog-categories-list');
+            if (!categoriesList) return;
 
-            const posts = data.posts.slice(0, 6);
-            posts.forEach((post) => {
+            data.categories.forEach((category) => {
                 const li = document.createElement('li');
-                li.classList.add('blog-post-item');
+                li.className = 'category-item';
 
                 li.innerHTML = `
-          <a href="#" class="post-link">
-            <figure class="blog-banner-box">
-              <img src="${post.image}" alt="${post.title}" loading="lazy">
-            </figure>
-            <div class="blog-content">
-              <h3 class="h3 blog-item-title">${post.title}</h3>
-              <p class="blog-text">${post.description}</p>
-            </div>
-          </a>
-        `;
-                postList.appendChild(li);
+                    <a href="#" class="category-link">
+                        <figure class="category-banner-box">
+                            <img src="${category.image}" alt="${category.title}" loading="lazy">
+                        </figure>
 
-                const link = li.querySelector('.post-link');
-                link.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    loadBlogPostDetail(post.file);
+                        <div class="category-content">
+                            <h3 class="h3 category-title">${category.title}</h3>
+                            <p class="category-description">${category.description}</p>
+                            
+                            <div class="category-meta">
+                                <span class="post-count">${category.posts.length}개의 포스트</span>
+                            </div>
+                        </div>
+                    </a>
+                `;
+
+                categoriesList.appendChild(li);
+
+                // 카테고리 클릭 이벤트 처리
+                const link = li.querySelector('.category-link');
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadCategoryPosts(category);
                 });
             });
         })
-        .catch((err) => console.error('블로그 포스트 로딩 오류:', err));
+        .catch((err) => console.error('카테고리 로딩 오류:', err));
 }
 
-function loadBlogPostDetail(file) {
-    fetch(`./pages/blog/${file}`)
-        .then((res) => res.text())
-        .then((html) => {
-            const detailContainer = contentContainer.querySelector('#post-detail-container');
-            const blogPostsSection = contentContainer.querySelector('.blog-posts');
-            const postDetailSection = contentContainer.querySelector('.post-detail');
+function loadCategoryPosts(category) {
+    const blogCategories = document.querySelector('.blog-categories');
+    const blogPosts = document.querySelector('.blog-posts');
+    const blogTitle = document.getElementById('blog-title');
+    const categoryDescription = blogPosts.querySelector('.category-description');
+    const postsContainer = document.getElementById('blog-posts-list');
 
-            if (!detailContainer || !blogPostsSection || !postDetailSection) return;
+    // 타이틀 업데이트
+    blogTitle.textContent = category.title;
+    categoryDescription.textContent = category.description;
 
-            blogPostsSection.style.display = 'none';
-            detailContainer.innerHTML = html;
+    // 게시글 목록 초기화 및 생성
+    postsContainer.innerHTML = '';
 
-            const blogPostDetailArticle = detailContainer.querySelector('.blog-post-detail');
-            if (blogPostDetailArticle) {
-                blogPostDetailArticle.classList.add('active');
-            }
+    category.posts.forEach((post) => {
+        const li = document.createElement('li');
+        li.className = 'blog-post-item';
 
-            postDetailSection.style.display = 'block';
-        })
-        .catch((err) => console.error('포스트 상세 로딩 오류:', err));
+        li.innerHTML = `
+            <a href="#" class="post-link">
+                <h3 class="post-title">${post.title}</h3>
+                <p class="post-summary">${post.summary}</p>
+                <div class="post-meta">
+                    <time class="post-date" datetime="${post.date}">
+                        ${new Date(post.date).toLocaleDateString()}
+                    </time>
+                    <div class="post-tags">
+                        ${post.tags.map((tag) => `<span class="post-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            </a>
+        `;
+
+        postsContainer.appendChild(li);
+
+        const link = li.querySelector('.post-link');
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadBlogPostDetail(category.id, post);
+        });
+    });
+
+    // 화면 전환
+    blogCategories.style.display = 'none';
+    blogPosts.style.display = 'block';
 }
+
+// 페이지 로드 시 카테고리 목록 표시
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('[data-page="blog"]')) {
+        loadBlogCategories();
+    }
+});
 
 function loadProjects() {
     fetch('./project.json')

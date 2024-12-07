@@ -1,41 +1,108 @@
 {
-    "posts": [
-      {
-        "title": "Design conferences in 2022",
-        "image": "./assets/images/blog-1.jpg",
-        "description": "안녕하세요",
-        "file": "post1.html"
-      },
-      {
-        "title": "Best fonts every designer",
-        "image": "./assets/images/blog-2.jpg",
-        "description": "안녕하세요",
-        "file": "post2.html"
-      },
-      {
-        "title": "Design digest #80",
-        "image": "./assets/images/blog-3.jpg",
-        "description": "안녕하세요",
-        "file": "post3.html"
-      },
-      {
-        "title": "UI interactions of the week",
-        "image": "./assets/images/blog-4.jpg",
-        "description": "안녕하세요",
-        "file": "post4.html"
-      },
-      {
-        "title": "The forgotten art of spacing",
-        "image": "./assets/images/blog-5.jpg",
-        "description": "안녕하세요",
-        "file": "post5.html"
-      },
-      {
-        "title": "Design digest #79",
-        "image": "./assets/images/blog-6.jpg",
-        "description": "안녕하세요",
-        "file": "post6.html"
-      }
+    "categories": [
+        {
+            "id": "algorithm",
+            "title": "Algorithm",
+            "description": "알고리즘 학습과 문제 해결 전략",
+            "image": "./assets/images/blog-1.jpg",
+            "posts": [
+                {
+                    "id": "algorithm-basics",
+                    "title": "알고리즘 기초: 시간복잡도와 공간복잡도",
+                    "summary": "알고리즘의 성능을 평가하는 기준과 Big-O 표기법에 대해 알아봅니다.",
+                    "date": "2024-01-15",
+                    "image": "./assets/images/blog-1.jpg",
+                    "tags": ["기초", "복잡도", "Big-O"],
+                    "file": "algorithm/basics.html"
+                },
+                {
+                    "id": "sorting-algorithms",
+                    "title": "정렬 알고리즘 완벽 가이드",
+                    "summary": "다양한 정렬 알고리즘의 특징과 구현 방법을 비교 분석합니다.",
+                    "date": "2024-01-20",
+                    "image": "./assets/images/blog-2.jpg",
+                    "tags": ["정렬", "구현", "최적화"],
+                    "file": "algorithm/sorting.html"
+                }
+            ]
+        },
+        {
+            "id": "react",
+            "title": "React",
+            "description": "React 생태계와 최신 개발 트렌드",
+            "image": "./assets/images/blog-3.jpg",
+            "posts": [
+                {
+                    "id": "react-hooks",
+                    "title": "React Hooks 완벽 가이드",
+                    "summary": "React Hooks의 기본 개념부터 실전 활용까지 알아봅니다.",
+                    "date": "2024-02-01",
+                    "image": "./assets/images/blog-3.jpg",
+                    "tags": ["Hooks", "상태관리", "최적화"],
+                    "file": "react/hooks.html"
+                },
+                {
+                    "id": "react-performance",
+                    "title": "React 성능 최적화 전략",
+                    "summary": "React 애플리케이션의 성능을 향상시키는 다양한 방법들을 소개합니다.",
+                    "date": "2024-02-10",
+                    "image": "./assets/images/blog-4.jpg",
+                    "tags": ["성능", "메모이제이션", "렌더링"],
+                    "file": "react/performance.html"
+                }
+            ]
+        },
+        {
+            "id": "spring",
+            "title": "Spring",
+            "description": "Spring Framework와 Spring Boot 학습",
+            "image": "./assets/images/blog-5.jpg",
+            "posts": [
+                {
+                    "id": "spring-boot-basics",
+                    "title": "Spring Boot 시작하기",
+                    "summary": "Spring Boot의 핵심 개념과 기본 설정 방법을 알아봅니다.",
+                    "date": "2024-03-01",
+                    "image": "./assets/images/blog-5.jpg",
+                    "tags": ["입문", "설정", "구조"],
+                    "file": "spring/boot-basics.html"
+                },
+                {
+                    "id": "spring-security",
+                    "title": "Spring Security 인증과 권한",
+                    "summary": "Spring Security를 활용한 안전한 인증 시스템 구축 방법을 알아봅니다.",
+                    "date": "2024-03-15",
+                    "image": "./assets/images/blog-6.jpg",
+                    "tags": ["보안", "인증", "권한"],
+                    "file": "spring/security.html"
+                }
+            ]
+        },
+        {
+            "id": "aws",
+            "title": "AWS",
+            "description": "Amazon Web Services 클라우드 플랫폼 가이드",
+            "image": "./assets/images/blog-4.jpg",
+            "posts": [
+                {
+                    "id": "aws-ec2-basics",
+                    "title": "AWS EC2 시작하기",
+                    "summary": "AWS EC2 인스턴스 생성부터 운영까지의 기본 가이드",
+                    "date": "2024-04-01",
+                    "image": "./assets/images/blog-4.jpg",
+                    "tags": ["EC2", "클라우드", "서버"],
+                    "file": "aws/ec2-basics.html"
+                },
+                {
+                    "id": "aws-s3-guide",
+                    "title": "S3 스토리지 완벽 가이드",
+                    "summary": "AWS S3를 활용한 효율적인 파일 저장소 구축 방법",
+                    "date": "2024-04-15",
+                    "image": "./assets/images/blog-2.jpg",
+                    "tags": ["S3", "스토리지", "파일관리"],
+                    "file": "aws/s3-guide.html"
+                }
+            ]
+        }
     ]
-  }
-  
+}

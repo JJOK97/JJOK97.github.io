@@ -1943,9 +1943,76 @@ main {
 }
 
 .blog-posts-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.category-description {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    line-height: 1.6;
+}
+
+.post-link {
+    padding: 16px 20px;
+    display: block;
+    transition: var(--transition-1);
+}
+
+.post-link:hover {
+    background: var(--eerie-black-1);
+}
+
+.post-title {
+    color: var(--white-2);
+    font-size: var(--fs-5);
+    margin-bottom: 8px;
+    transition: var(--transition-1);
+}
+
+.post-link:hover .post-title {
+    color: var(--orange-yellow-crayola);
+}
+
+.post-summary {
+    color: var(--light-gray-70);
+    font-size: var(--fs-6);
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.post-meta time {
+    color: var(--light-gray-70);
+}
+
+.post-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.post-tag {
+    background: var(--onyx);
+    color: var(--orange-yellow-crayola);
+    font-size: var(--fs-8);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.post-date {
+    color: var(--light-gray-70);
+    font-size: var(--fs-7);
 }
 
 .blog-post-item > a {
@@ -2033,6 +2100,110 @@ article.blog-post-detail.active {
     font-size: var(--fs-6);
     font-weight: var(--fw-300);
     line-height: 1.6;
+}
+
+/* 카테고리 목록 스타일 */
+.blog-categories-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.category-item {
+    background: var(--border-gradient-onyx);
+    padding: 1px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform var(--transition-1);
+}
+
+.category-item > a {
+    position: relative;
+    background: var(--eerie-black-1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    height: 100%;
+    border-radius: 16px;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.category-item:hover {
+    transform: translateY(-2px);
+}
+
+.category-banner-box {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.category-banner-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.category-item:hover .category-banner-box img {
+    transform: scale(1.1);
+}
+
+.category-content {
+    flex: 1;
+    width: 100%;
+}
+
+.category-title {
+    color: var(--white-2);
+    font-size: var(--fs-4);
+    font-weight: var(--fw-400);
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.category-description {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+}
+
+.category-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.post-count {
+    color: var(--orange-yellow-crayola);
+    font-size: var(--fs-7);
+    font-weight: var(--fw-300);
+}
+
+/* 카테고리 헤더 스타일 */
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* 반응형 스타일 */
+@media (min-width: 768px) {
+    .blog-categories-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .category-item > a {
+        padding: 30px;
+    }
 }
 
 /*-----------------------------------*\
