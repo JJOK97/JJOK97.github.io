@@ -1,57 +1,54 @@
 <div class="overview-section">
+    <!-- 프로젝트 미리보기 -->
     <div class="project-preview content-card">
-        <h4 class="h4">Project Preview</h4>
+        <h4 class="h4">Preview</h4>
         <div class="preview-content">
-            <!-- 영상 또는 이미지가 들어갈 곳 -->
             <div class="preview-media">
-                <!-- [TODO] 프로젝트 미리보기 영상/이미지를 추가하세요 -->
                 <img src="path/to/preview.jpg" alt="프로젝트 미리보기" class="preview-image" />
-                <!-- 또는 영상 -->
-                <!-- <video src="path/to/preview.mp4" controls class="preview-video"></video> -->
             </div>
         </div>
     </div>
 
+    <!-- 프로젝트 정보 통합 -->
     <div class="project-info content-card">
-        <h4 class="h4">Project Links</h4>
-        <div class="links-container">
-            <!-- [TODO] 프로젝트 관련 링크를 추가하세요 -->
-            <a href="#" target="_blank" class="project-link">
-                <div class="icon-box">
-                    <ion-icon name="logo-github"></ion-icon>
+        <div class="info-header">
+            <div class="info-main">
+                <h4 class="h4">프로젝트 소개</h4>
+                <div class="links-container">
+                    <a href="#" target="_blank" class="project-link">
+                        <div class="icon-box">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="project-link">
+                        <div class="icon-box">
+                            <ion-icon name="document-text-outline"></ion-icon>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="project-link">
+                        <div class="icon-box">
+                            <ion-icon name="globe-outline"></ion-icon>
+                        </div>
+                    </a>
                 </div>
-                <span>Repository</span>
-            </a>
-            <a href="#" target="_blank" class="project-link">
-                <div class="icon-box">
-                    <ion-icon name="document-text-outline"></ion-icon>
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">개발 기간</span>
+                    <span class="info-value">YYYY.MM.DD ~ YYYY.MM.DD</span>
                 </div>
-                <span>Documentation</span>
-            </a>
-            <a href="#" target="_blank" class="project-link">
-                <div class="icon-box">
-                    <ion-icon name="globe-outline"></ion-icon>
+                <div class="info-item">
+                    <span class="info-label">개발 인원</span>
+                    <div class="team-members">
+                        <!-- [TODO] 팀원 정보를 입력하세요 -->
+                        <!-- 예시:
+                        <span class="member">홍길동 
+                            <a href="https://github.com/github-id" target="_blank" class="github-link">@github-id</a>
+                            <span class="role">ROLE</span>
+                        </span>
+                        -->
+                    </div>
                 </div>
-                <span>Demo Site</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 프로젝트 기간 -->
-    <div class="timeline-box content-card">
-        <div class="project-period">
-            <h4 class="h4">프로젝트 기간</h4>
-            <!-- [TODO] 프로젝트 기간을 입력하세요 -->
-            <p class="timeline-text">YYYY.MM.DD ~ YYYY.MM.DD</p>
-        </div>
-
-        <div class="project-team">
-            <h4 class="h4">팀 구성</h4>
-            <div class="team-members">
-                <!-- [TODO] 팀원 정보를 입력하세요 -->
-                <!-- 예시:
-          <span class="member">홍길동 @github-id ROLE</span>
-          -->
             </div>
         </div>
     </div>
