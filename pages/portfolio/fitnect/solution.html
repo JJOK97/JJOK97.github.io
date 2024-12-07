@@ -2,116 +2,102 @@
     <!-- 문제 해결 과정 소개 -->
     <div class="content-card">
         <h4 class="h4">문제 해결 과정</h4>
-        <p class="timeline-text">
-        프로젝트 개발 과정에서 마주친 주요 문제점들과 이를 해결하기 위한 접근 방법을 소개합니다.
-        </p>
+        <p class="timeline-text">프로젝트 개발 과정에서 마주친 주요 문제점들과 이를 해결하기 위한 접근 방법을 소개합니다.</p>
     </div>
 
     <!-- 해결 과정 상세 -->
     <div class="problem-solutions">
         <!-- 문제 1 -->
         <div class="content-card solution-card">
-        <div class="solution-header">
-            <div class="icon-box">
-            <ion-icon name="warning-outline"></ion-icon>
-            </div>
-            <h5 class="h5">실시간 위치 기반 검색 성능</h5>
-        </div>
-        
-        <div class="solution-content">
-            <div class="problem-description">
-            <h6 class="h6">문제점</h6>
-            <p class="timeline-text">
-                사용자 위치 기반으로 주변 시설을 검색할 때 데이터베이스 쿼리 성능 저하 발생
-            </p>
+            <div class="solution-header">
+                <div class="icon-box">
+                    <ion-icon name="warning-outline"></ion-icon>
+                </div>
+                <h5 class="h5">실시간 위치 기반 검색 성능</h5>
             </div>
 
-            <div class="solution-description">
-            <h6 class="h6">해결 방안</h6>
-            <ul class="solution-steps">
-                <li>공간 인덱싱 도입</li>
-                <li>Redis 캐싱 적용</li>
-                <li>쿼리 최적화</li>
-            </ul>
-            </div>
+            <div class="solution-content">
+                <div class="problem-description">
+                    <h6 class="h6">문제점</h6>
+                    <p class="timeline-text">사용자 위치 기반으로 주변 시설을 검색할 때 데이터베이스 쿼리 성능 저하 발생</p>
+                </div>
 
-            <div class="solution-result">
-            <h6 class="h6">결과</h6>
-            <p class="timeline-text">
-                검색 응답 시간 75% 감소 및 서버 부하 크게 개선
-            </p>
+                <div class="solution-description">
+                    <h6 class="h6">해결 방안</h6>
+                    <ul class="solution-steps">
+                        <li>공간 인덱싱 도입</li>
+                        <li>Redis 캐싱 적용</li>
+                        <li>쿼리 최적화</li>
+                    </ul>
+                </div>
+
+                <div class="solution-result">
+                    <h6 class="h6">결과</h6>
+                    <p class="timeline-text">검색 응답 시간 75% 감소 및 서버 부하 크게 개선</p>
+                </div>
             </div>
-        </div>
         </div>
 
         <!-- 문제 2 -->
         <div class="content-card solution-card">
-        <div class="solution-header">
-            <div class="icon-box">
-            <ion-icon name="warning-outline"></ion-icon>
-            </div>
-            <h5 class="h5">결제 시스템 안정성</h5>
-        </div>
-        
-        <div class="solution-content">
-            <div class="problem-description">
-            <h6 class="h6">문제점</h6>
-            <p class="timeline-text">
-                동시 예약 시도 시 데이터 정합성 문제 발생
-            </p>
+            <div class="solution-header">
+                <div class="icon-box">
+                    <ion-icon name="warning-outline"></ion-icon>
+                </div>
+                <h5 class="h5">결제 시스템 안정성</h5>
             </div>
 
-            <div class="solution-description">
-            <h6 class="h6">해결 방안</h6>
-            <ul class="solution-steps">
-                <li>트랜잭션 처리 강화</li>
-                <li>낙관적 락 구현</li>
-                <li>예약 상태 관리 개선</li>
-            </ul>
-            </div>
+            <div class="solution-content">
+                <div class="problem-description">
+                    <h6 class="h6">문제점</h6>
+                    <p class="timeline-text">동시 예약 시도 시 데이터 정합성 문제 발생</p>
+                </div>
 
-            <div class="solution-result">
-            <h6 class="h6">결과</h6>
-            <p class="timeline-text">
-                중복 예약 문제 해결 및 시스템 안정성 확보
-            </p>
+                <div class="solution-description">
+                    <h6 class="h6">해결 방안</h6>
+                    <ul class="solution-steps">
+                        <li>트랜잭션 처리 강화</li>
+                        <li>낙관적 락 구현</li>
+                        <li>예약 상태 관리 개선</li>
+                    </ul>
+                </div>
+
+                <div class="solution-result">
+                    <h6 class="h6">결과</h6>
+                    <p class="timeline-text">중복 예약 문제 해결 및 시스템 안정성 확보</p>
+                </div>
             </div>
-        </div>
         </div>
 
         <!-- 문제 3 -->
         <div class="content-card solution-card">
-        <div class="solution-header">
-            <div class="icon-box">
-            <ion-icon name="warning-outline"></ion-icon>
-            </div>
-            <h5 class="h5">사용자 인증 보안</h5>
-        </div>
-        
-        <div class="solution-content">
-            <div class="problem-description">
-            <h6 class="h6">문제점</h6>
-            <p class="timeline-text">
-                토큰 기반 인증에서 보안 취약점 발견
-            </p>
+            <div class="solution-header">
+                <div class="icon-box">
+                    <ion-icon name="warning-outline"></ion-icon>
+                </div>
+                <h5 class="h5">사용자 인증 보안</h5>
             </div>
 
-            <div class="solution-description">
-            <h6 class="h6">해결 방안</h6>
-            <ul class="solution-steps">
-                <li>JWT 리프레시 토큰 도입</li>
-                <li>토큰 만료 시간 최적화</li>
-                <li>보안 헤더 강화</li>
-            </ul>
-            </div>
+            <div class="solution-content">
+                <div class="problem-description">
+                    <h6 class="h6">문제점</h6>
+                    <p class="timeline-text">토큰 기반 인증에서 보안 취약점 발견</p>
+                </div>
 
-            <div class="solution-result">
-            <h6 class="h6">결과</h6>
-            <p class="timeline-text">
-                보안성 강화 및 사용자 경험 개선
-            </p>
+                <div class="solution-description">
+                    <h6 class="h6">해결 방안</h6>
+                    <ul class="solution-steps">
+                        <li>JWT 리프레시 토큰 도입</li>
+                        <li>토큰 만료 시간 최적화</li>
+                        <li>보안 헤더 강화</li>
+                    </ul>
+                </div>
+
+                <div class="solution-result">
+                    <h6 class="h6">결과</h6>
+                    <p class="timeline-text">보안성 강화 및 사용자 경험 개선</p>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 
@@ -119,18 +105,18 @@
     <div class="content-card">
         <h4 class="h4">성과 지표</h4>
         <div class="metrics-grid">
-        <div class="metric-item">
-            <div class="metric-value">75%</div>
-            <div class="metric-label">검색 속도 개선</div>
-        </div>
-        <div class="metric-item">
-            <div class="metric-value">99.9%</div>
-            <div class="metric-label">시스템 안정성</div>
-        </div>
-        <div class="metric-item">
-            <div class="metric-value">ZERO</div>
-            <div class="metric-label">중복 예약</div>
-        </div>
+            <div class="metric-item">
+                <div class="metric-value">75%</div>
+                <div class="metric-label">검색 속도 개선</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">99.9%</div>
+                <div class="metric-label">시스템 안정성</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">ZERO</div>
+                <div class="metric-label">중복 예약</div>
+            </div>
         </div>
     </div>
 </div>
