@@ -5,6 +5,7 @@
         "date": "2022-02-23",
         "category": "Design",
         "image": "./assets/images/blog-1.jpg",
+        "description": "안녕하세요",
         "file": "post1.html"
       },
       {
@@ -12,6 +13,7 @@
         "date": "2022-02-23",
         "category": "Design",
         "image": "./assets/images/blog-2.jpg",
+        "description": "안녕하세요",
         "file": "post2.html"
       },
       {
@@ -19,6 +21,7 @@
         "date": "2022-02-23",
         "category": "Design",
         "image": "./assets/images/blog-3.jpg",
+        "description": "안녕하세요",
         "file": "post3.html"
       },
       {
@@ -26,6 +29,7 @@
         "date": "2022-02-23",
         "category": "Design",
         "image": "./assets/images/blog-4.jpg",
+        "description": "안녕하세요",
         "file": "post4.html"
       },
       {
@@ -33,6 +37,7 @@
         "date": "2022-02-23",
         "category": "Design",
         "image": "./assets/images/blog-5.jpg",
+        "description": "안녕하세요",
         "file": "post5.html"
       },
       {
@@ -40,6 +45,7 @@
         "date": "2022-02-23",
         "category": "Design",
         "image": "./assets/images/blog-6.jpg",
+        "description": "안녕하세요",
         "file": "post6.html"
       }
     ]

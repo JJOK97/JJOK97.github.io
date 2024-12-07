@@ -21,14 +21,12 @@ function loadPage(pageName) {
     })
     .then(html => {
       contentContainer.innerHTML = html;
-
-      // 로드된 article에 active 클래스 추가
+      
       const loadedArticle = contentContainer.querySelector(`article[data-page="${pageName}"]`);
       if (loadedArticle) {
         loadedArticle.classList.add('active');
       }
 
-      // 페이지별 추가 데이터 로딩
       if (pageName === 'blog') {
         loadBlogPosts();
       } else if (pageName === 'portfolio') {
@@ -43,7 +41,6 @@ function loadPage(pageName) {
     });
 }
 
-// 블로그 게시글 로딩 함수
 function loadBlogPosts() {
   fetch('./posts.json')
     .then(res => res.json())
@@ -68,13 +65,12 @@ function loadBlogPosts() {
                 <time datetime="${post.date}">${new Date(post.date).toLocaleDateString()}</time>
               </div>
               <h3 class="h3 blog-item-title">${post.title}</h3>
-              <p class="blog-text">게시글에 대한 짧은 설명을 여기에 작성할 수 있습니다.</p>
+              <p class="blog-text">${post.description}</p>
             </div>
           </a>
         `;
         postList.appendChild(li);
 
-        // 각 게시글에 클릭 이벤트 등록
         const link = li.querySelector('.post-link');
         link.addEventListener('click', (event) => {
           event.preventDefault();
@@ -85,7 +81,6 @@ function loadBlogPosts() {
     .catch(err => console.error("블로그 포스트 로딩 오류:", err));
 }
 
-// 상세 게시글 로딩 함수
 function loadBlogPostDetail(file) {
   fetch(`./pages/blog/${file}`)
     .then(res => res.text())
@@ -99,7 +94,6 @@ function loadBlogPostDetail(file) {
       blogPostsSection.style.display = 'none';
       detailContainer.innerHTML = html;
 
-      // 여기서 blog-post-detail article에 active 클래스 추가
       const blogPostDetailArticle = detailContainer.querySelector('.blog-post-detail');
       if (blogPostDetailArticle) {
         blogPostDetailArticle.classList.add('active');
@@ -143,6 +137,9 @@ function loadProjects() {
           loadProjectDetail(project.file);
         });
       });
+
+      // 프로젝트 로드 후 필터 기능 초기화
+      initializeFilters();
     })
     .catch(err => console.error("프로젝트 로딩 오류:", err));
 }
@@ -153,14 +150,10 @@ function loadProjectDetail(file) {
     .then(html => {
       const projectList = contentContainer.querySelector('#project-list');
       const detailContainer = contentContainer.querySelector('#project-detail-container');
-
       const projectsSection = document.querySelector('.projects');
-
       const filterList = projectsSection.querySelector('.filter-list');
       const filterSelectBox = projectsSection.querySelector('.filter-select-box');
-
       const portfolioSection = document.querySelector('.portfolio');
-
       const articleTitle = portfolioSection.querySelector('.article-title');
 
       if (!detailContainer || !projectList) return;
@@ -175,8 +168,61 @@ function loadProjectDetail(file) {
     .catch(err => console.error("프로젝트 상세 로딩 오류:", err));
 }
 
+function initializeFilters() {
+  const select = contentContainer.querySelector("[data-select]");
+  const selectItems = contentContainer.querySelectorAll("[data-select-item]");
+  const selectValue = contentContainer.querySelector("[data-selecct-value]");
+  const filterBtn = contentContainer.querySelectorAll("[data-filter-btn]");
+  const filterItems = contentContainer.querySelectorAll("[data-filter-item]");
 
-// 페이지 초기화 함수: 로드된 페이지 내 요소들을 다시 바인딩
+  function filterFunc(selectedValue) {
+    filterItems.forEach(item => {
+      if (selectedValue === "all") {
+        item.classList.add("active");
+      } else if (selectedValue === item.dataset.category) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  }
+
+  if (select) {
+    select.addEventListener("click", function () {
+      elementToggleFunc(this);
+    });
+  }
+
+  let lastClickedBtn = null;
+
+  if (selectItems && selectItems.length > 0 && selectValue) {
+    selectItems.forEach(item => {
+      item.addEventListener("click", function () {
+        const selectedVal = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        elementToggleFunc(select);
+        filterFunc(selectedVal);
+      });
+    });
+  }
+
+  if (filterBtn && filterBtn.length > 0) {
+    filterBtn.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const selectedVal = this.innerText.toLowerCase();
+        selectValue.innerText = this.innerText;
+        filterFunc(selectedVal);
+
+        if (lastClickedBtn) {
+          lastClickedBtn.classList.remove("active");
+        }
+        this.classList.add("active");
+        lastClickedBtn = this;
+      });
+    });
+  }
+}
+
 function initPage() {
   const testimonialsItem = contentContainer.querySelectorAll("[data-testimonials-item]");
   const modalContainer = contentContainer.querySelector("[data-modal-container]");
@@ -186,29 +232,20 @@ function initPage() {
   const modalTitle = contentContainer.querySelector("[data-modal-title]");
   const modalText = contentContainer.querySelector("[data-modal-text]");
 
-  const select = contentContainer.querySelector("[data-select]");
-  const selectItems = contentContainer.querySelectorAll("[data-select-item]");
-  const selectValue = contentContainer.querySelector("[data-selecct-value]");
-  const filterBtn = contentContainer.querySelectorAll("[data-filter-btn]");
-  const filterItems = contentContainer.querySelectorAll("[data-filter-item]");
-
   const form = contentContainer.querySelector("[data-form]");
   const formInputs = contentContainer.querySelectorAll("[data-form-input]");
   const formBtn = contentContainer.querySelector("[data-form-btn]");
 
-  const pages = contentContainer.querySelectorAll("[data-page]");
-  const navigationLinks = document.querySelectorAll("[data-nav-link]");
-
   function testimonialsModalFunc() {
-    if(modalContainer && overlay) {
+    if (modalContainer && overlay) {
       modalContainer.classList.toggle("active");
       overlay.classList.toggle("active");
     }
   }
 
-  if(testimonialsItem && testimonialsItem.length > 0) {
-    for (let i = 0; i < testimonialsItem.length; i++) {
-      testimonialsItem[i].addEventListener("click", function () {
+  if (testimonialsItem && testimonialsItem.length > 0) {
+    testimonialsItem.forEach(item => {
+      item.addEventListener("click", function () {
         if (modalImg && modalTitle && modalText) {
           const avatar = this.querySelector("[data-testimonials-avatar]");
           const title = this.querySelector("[data-testimonials-title]");
@@ -224,74 +261,28 @@ function initPage() {
           testimonialsModalFunc();
         }
       });
-    }
+    });
   }
 
-  if(modalCloseBtn) {
+  if (modalCloseBtn) {
     modalCloseBtn.addEventListener("click", testimonialsModalFunc);
   }
 
-  if(overlay) {
+  if (overlay) {
     overlay.addEventListener("click", testimonialsModalFunc);
   }
 
-  function filterFunc(selectedValue) {
-    if(filterItems) {
-      for (let i = 0; i < filterItems.length; i++) {
-        if (selectedValue === "all") {
-          filterItems[i].classList.add("active");
-        } else if (selectedValue === filterItems[i].dataset.category) {
-          filterItems[i].classList.add("active");
-        } else {
-          filterItems[i].classList.remove("active");
-        }
-      }
-    }
-  }
-
-  if(select) {
-    select.addEventListener("click", function () { elementToggleFunc(this); });
-  }
-
-  let lastClickedBtn = (filterBtn && filterBtn.length > 0) ? filterBtn[0] : null;
-
-  if(selectItems && selectItems.length > 0 && selectValue) {
-    for (let i = 0; i < selectItems.length; i++) {
-      selectItems[i].addEventListener("click", function () {
-        let selectedVal = this.innerText.toLowerCase();
-        selectValue.innerText = this.innerText;
-        elementToggleFunc(select);
-        filterFunc(selectedVal);
-      });
-    }
-  }
-
-  if(filterBtn && filterBtn.length > 0 && selectValue) {
-    for (let i = 0; i < filterBtn.length; i++) {
-      filterBtn[i].addEventListener("click", function () {
-        let selectedVal = this.innerText.toLowerCase();
-        selectValue.innerText = this.innerText;
-        filterFunc(selectedVal);
-
-        if(lastClickedBtn) lastClickedBtn.classList.remove("active");
-        this.classList.add("active");
-        lastClickedBtn = this;
-      });
-    }
-  }
-
-  if(form && formInputs && formBtn) {
-    for (let i = 0; i < formInputs.length; i++) {
-      formInputs[i].addEventListener("input", function () {
+  if (form && formInputs && formBtn) {
+    formInputs.forEach(input => {
+      input.addEventListener("input", function () {
         if (form.checkValidity()) {
           formBtn.removeAttribute("disabled");
         } else {
           formBtn.setAttribute("disabled", "");
         }
       });
-    }
+    });
   }
-  
 }
 
 // DOMContentLoaded 시 초기 about 페이지 로드
