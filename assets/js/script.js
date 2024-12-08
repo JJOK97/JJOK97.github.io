@@ -133,6 +133,63 @@ function loadCategoryPosts(category) {
     blogPosts.style.display = 'block';
 }
 
+function loadBlogPostDetail(categoryId, post) {
+    const blogPosts = document.querySelector('.blog-posts');
+    const postDetail = document.querySelector('.post-detail');
+    const detailContainer = document.getElementById('post-detail-container');
+
+    detailContainer.innerHTML = `
+    <div class="blog-detail">
+        <header class="blog-detail-header">
+            <h3 class="h3 detail-title">${post.title}</h3>
+            <div class="detail-meta">
+                <time datetime="${post.date}">${new Date(post.date).toLocaleDateString()}</time>
+                <div class="detail-tags">
+                    ${post.tags.map((tag) => `<span class="detail-tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+        </header>
+        
+        <div class="blog-detail-content markdown-body">
+            <!-- 마크다운 내용이 여기에 렌더링됨 -->
+        </div>
+  
+        <div class="post-footer">
+            <hr class="divider" />
+            <div class="post-footer-content">
+                <button class="back-to-posts">
+                    <span class="back-text">목록으로</span>
+                </button>
+                <p class="footer-date">마지막 업데이트: ${post.date}</p>
+            </div>
+        </div>
+    </div>
+  `;
+
+    // 마크다운 내용 불러오기
+    fetch(`./pages/blog/${post.content}`)
+        .then((res) => res.text())
+        .then((markdown) => {
+            const contentHtml = marked.parse(markdown);
+            detailContainer.querySelector('.markdown-body').innerHTML = contentHtml;
+            // 코드 블록에 하이라이팅 적용
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+
+    // 뒤로가기 버튼 이벤트
+    const backBtn = detailContainer.querySelector('.back-to-posts');
+    backBtn.addEventListener('click', () => {
+        postDetail.style.display = 'none';
+        blogPosts.style.display = 'block';
+    });
+
+    // 화면 전환
+    blogPosts.style.display = 'none';
+    postDetail.style.display = 'block';
+}
+
 // 페이지 로드 시 카테고리 목록 표시
 document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('[data-page="blog"]')) {
@@ -184,7 +241,7 @@ function loadProjects() {
 }
 
 function loadProjectDetail(file) {
-    const projectName = file.split('/')[0]; // fitnect/index.html -> fitnect
+    const projectName = file.split('/')[0];
 
     fetch(`./pages/portfolio/${projectName}/index.html`)
         .then((res) => res.text())
@@ -383,4 +440,10 @@ document.addEventListener('DOMContentLoaded', function () {
             loadPage(page);
         });
     });
+
+    hljs.configure({
+        languages: ['java', 'javascript', 'python', 'sql', 'html', 'css'],
+        tabReplace: '    ',
+    });
+    hljs.highlightAll();
 });

@@ -1082,6 +1082,27 @@ main {
   #PORTFOLIO DETAIL
 \*-----------------------------------*/
 
+.detail-text,
+.detail-subtitle,
+.detail-title,
+.info-text,
+.code-title {
+    letter-spacing: 0.5px; /* 글자 간격 */
+    word-spacing: 2px; /* 단어 간격 */
+    line-height: 1.8; /* 줄 간격 */
+    font-weight: 400; /* 폰트 두께 */
+}
+
+.detail-title {
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+.detail-subtitle {
+    font-weight: 500;
+    letter-spacing: 0.6px;
+}
+
 .portfolio-detail {
     max-width: 1000px;
 }
@@ -2033,14 +2054,6 @@ main {
     z-index: -1;
 }
 
-.blog-post-detail {
-    display: block !important;
-}
-
-article.blog-post-detail.active {
-    display: block;
-}
-
 .blog-banner-box {
     width: 100%;
     height: 200px;
@@ -2204,6 +2217,281 @@ article.blog-post-detail.active {
     .category-item > a {
         padding: 30px;
     }
+}
+
+/* 블로그 상세 페이지 스타일 */
+.blog-detail {
+    border-radius: 14px;
+}
+
+.blog-detail-header {
+    margin-bottom: 25px;
+}
+
+.detail-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--jet);
+}
+
+.detail-meta time {
+    color: var(--light-gray-70);
+    font-size: var(--fs-6);
+}
+
+.detail-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.detail-tag {
+    background: var(--onyx);
+    color: var(--orange-yellow-crayola);
+    font-size: var(--fs-7);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.blog-detail-content {
+    color: var(--light-gray);
+    font-size: var(--fs-5);
+    line-height: 1.8;
+}
+
+.detail-text {
+    margin-bottom: 15px;
+}
+
+.back-to-posts {
+    display: inline-flex;
+    align-items: center;
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    padding: 5px;
+    background: var(--eerie-black-2);
+    border-radius: 8px;
+    transition: var(--transition-1);
+}
+
+.back-to-posts:hover {
+    color: var(--orange-yellow-crayola);
+    transform: translateX(-4px);
+}
+
+/* 마크다운 기본 스타일 */
+.markdown-body {
+    border-radius: 14px;
+    color: var(--light-gray);
+    line-height: 1.6;
+}
+
+/* 제목 스타일 */
+.markdown-body h1 {
+    color: var(--white-2);
+    font-size: var(--fs-1);
+    margin-bottom: 5px;
+}
+
+.markdown-body h2,
+.markdown-body h3 {
+    color: var(--white-2);
+    font-size: var(--fs-2);
+    margin: 30px 0 1rem;
+    font-weight: var(--fw-500);
+}
+
+/* 본문 텍스트 */
+.markdown-body p {
+    margin-bottom: 15px;
+    font-size: var(--fs-6);
+    color: var(--light-gray);
+}
+
+/* 코드 블록 */
+.markdown-body pre {
+    margin: 15px 0.5rem 2.5rem 0.5rem;
+    background: var(--eerie-black-1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.markdown-body pre code {
+    display: block;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+    font-size: var(--fs-7);
+    line-height: 1.8;
+    padding: 20px;
+    white-space: pre;
+    tab-size: 4;
+    -moz-tab-size: 4;
+}
+
+.markdown-body pre code * {
+    display: inline;
+}
+
+/* 인용문 */
+.markdown-body blockquote {
+    background: var(--eerie-black-1);
+    border-left: 4px solid var(--orange-yellow-crayola);
+    padding: 15px 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.markdown-body blockquote p {
+    margin: 0;
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+}
+
+/* 리스트 */
+.markdown-body ul {
+    list-style: none;
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.markdown-body ul li {
+    color: var(--light-gray);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.markdown-body ul li::before {
+    content: '•';
+    color: var(--orange-yellow-crayola);
+    position: absolute;
+    left: 0;
+}
+
+/* 테이블 */
+.markdown-body .table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    background: var(--eerie-black-1);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+}
+
+.markdown-body th {
+    background: var(--onyx);
+    color: var(--white-2);
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: var(--fw-500);
+}
+
+.markdown-body td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--jet);
+}
+
+.markdown-body tr:last-child td {
+    border-bottom: none;
+}
+
+/* 구분선 */
+.markdown-body hr {
+    border: none;
+    height: 1px;
+    background: var(--jet);
+    margin: 20px 0;
+}
+
+/* 이탤릭체 */
+.markdown-body em {
+    color: var(--light-gray-70);
+    font-style: italic;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .markdown-body pre code {
+        font-size: var(--fs-8);
+    }
+
+    .markdown-body table {
+        font-size: var(--fs-7);
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 580px) {
+    .markdown-body blockquote {
+        margin: 15px -15px;
+        border-radius: 0;
+    }
+}
+
+.post-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-date {
+    color: var(--light-gray-70);
+    font-size: var(--fs-7);
+    font-style: italic;
+    padding: 5px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background: var(--jet);
+    margin: 20px 0;
+}
+
+/* 마크다운 콘텐츠에만 적용되는 특별한 스타일 */
+.markdown-body ol {
+    list-style: decimal;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.markdown-body ol li {
+    display: list-item;
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    margin-bottom: 10px;
+    line-height: 1.6;
+    list-style: auto;
+}
+
+/* 들여쓰기된 리스트를 위한 스타일 */
+.markdown-body ol ol {
+    list-style: lower-alpha;
+    margin-top: 10px;
+}
+
+/* 번호 스타일링 */
+.markdown-body ol li::marker {
+    color: var(--orange-yellow-crayola);
+    font-weight: var(--fw-500);
+}
+
+/* 리스트 아이템 호버 효과 */
+.markdown-body ol li:hover {
+    color: var(--white-2);
+    transition: color var(--transition-1);
 }
 
 /*-----------------------------------*\

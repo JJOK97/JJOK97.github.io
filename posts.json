@@ -13,7 +13,7 @@
                     "date": "2024-01-15",
                     "image": "./assets/images/blog-1.jpg",
                     "tags": ["기초", "복잡도", "Big-O"],
-                    "file": "algorithm/basics.html"
+                    "content": "algorithm/basics.md"
                 },
                 {
                     "id": "sorting-algorithms",
