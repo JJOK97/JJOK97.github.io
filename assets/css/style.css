@@ -3528,3 +3528,7 @@ textarea.form-input::-webkit-resizer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+.modal-container.active .tech-stacks {
+    grid-template-columns: 1fr; /* 1줄로 표시 */
+}
