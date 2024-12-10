@@ -642,6 +642,10 @@ section.testimonials > ul > li > a > div > p {
     color: white;
 }
 
+section.testimonials > ul > li {
+    display: block;
+}
+
 /**
  * #testimonials-modal
  */
@@ -1058,6 +1062,10 @@ section.testimonials > ul > li > a > div > p {
     grid-template-columns: 1fr;
     gap: 30px;
     margin-bottom: 10px;
+}
+
+.project-item {
+    display: none;
 }
 
 .project-item.active {
@@ -3315,7 +3323,7 @@ textarea.form-input::-webkit-resizer {
    */
 
     main {
-        max-width: 1400px;
+        max-width: 1300px;
         margin-inline: auto;
         display: flex;
         justify-content: center;
