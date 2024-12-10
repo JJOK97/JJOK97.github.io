@@ -717,9 +717,9 @@ section.testimonials > ul > li {
 .modal-container.active .testimonials-modal {
     transform: scale(1);
     opacity: 1;
-    min-height: 700px;
+    min-height: 500px;
     max-height: 80vh;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 /* 모달 기본 스타일 수정 */
@@ -738,7 +738,7 @@ section.testimonials > ul > li {
     }
 
     .portfolio-detail .filter-list {
-        gap: 10px;
+        gap: 10px !important;
     }
 }
 
@@ -832,7 +832,8 @@ section.testimonials > ul > li {
 }
 
 #modal-section-content {
-    height: calc(80vh - 20px);
+    height: calc(80vh - 100px);
+    min-height: 400px;
     overflow-y: auto;
 }
 
