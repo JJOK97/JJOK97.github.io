@@ -581,10 +581,6 @@ main {
     margin-bottom: 30px;
 }
 
-.testimonials-title {
-    margin-bottom: 20px;
-}
-
 .testimonials-list {
     display: flex;
     justify-content: flex-start;
@@ -628,6 +624,22 @@ main {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+section.testimonials > ul > li > a {
+    width: 22rem;
+}
+
+section.testimonials > ul > li > a > div > div > p,
+section.testimonials > ul > li > a > div > div > time {
+    font-size: var(--fs-5) !important;
+    margin-left: 0 !important;
+}
+
+section.testimonials > ul > li > a > div > p {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: white;
 }
 
 /**
@@ -804,7 +816,7 @@ main {
  */
 
 .timeline {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .timeline .title-wrapper {
@@ -1048,10 +1060,6 @@ main {
     margin-bottom: 10px;
 }
 
-.project-item {
-    display: none;
-}
-
 .project-item.active {
     display: block;
     animation: scaleUp 0.25s ease forwards;
@@ -1134,7 +1142,7 @@ main {
 
 .project-title,
 .project-category {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .project-title {
@@ -2155,13 +2163,13 @@ main {
     align-items: center;
     gap: 7px;
     margin-bottom: 2px;
+    margin-left: 5px;
 }
 
 .blog-meta :is(.blog-category, time) {
     color: var(--light-gray-70);
     font-size: var(--fs-8);
     font-weight: var(--fw-300);
-    margin-left: 10px;
 }
 
 .blog-meta .dot {
@@ -2892,10 +2900,6 @@ textarea.form-input::-webkit-resizer {
 
     /* testimonials */
 
-    .testimonials-title {
-        margin-bottom: 25px;
-    }
-
     .testimonials-list {
         gap: 30px;
         margin: 0 -30px;
@@ -3208,7 +3212,7 @@ textarea.form-input::-webkit-resizer {
         right: 0;
         width: max-content;
         border-radius: 0 20px;
-        padding: 0 20px;
+        padding: 0 10px;
         box-shadow: none;
     }
 
@@ -3311,7 +3315,7 @@ textarea.form-input::-webkit-resizer {
    */
 
     main {
-        max-width: 1200px;
+        max-width: 1400px;
         margin-inline: auto;
         display: flex;
         justify-content: center;
@@ -3335,8 +3339,10 @@ textarea.form-input::-webkit-resizer {
         max-height: max-content;
         height: 100%;
         margin-bottom: 0;
-        padding-top: 60px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         z-index: 1;
+        width: 300px;
     }
 
     .sidebar-info {

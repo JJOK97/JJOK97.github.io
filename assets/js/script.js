@@ -35,6 +35,8 @@ function loadPage(pageName) {
                 loadBlogCategories();
             } else if (pageName === 'portfolio') {
                 loadProjects();
+            } else if (pageName === 'about') {
+                displayTopProjects();
             }
 
             initPage();
@@ -44,6 +46,58 @@ function loadPage(pageName) {
             contentContainer.innerHTML = '<p>페이지 로딩 중 오류가 발생했습니다.</p>';
         });
 }
+
+// 상위 5개 프로젝트 표시
+function displayTopProjects() {
+    const projectsList = document.querySelector('.testimonials-list');
+
+    fetch('./project.json')
+        .then((response) => response.json())
+        .then((data) => {
+            const topProjects = data.projects.slice(0, 5); // 상위 5개만 선택
+
+            topProjects.forEach((project) => {
+                const li = document.createElement('li');
+                li.className = 'project-item';
+
+                li.innerHTML = `
+                    <a href="${project.file}" class="project-link">
+                        <figure class="project-img">
+                            <div class="project-item-icon-box">
+                                <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="${project.image}" alt="${project.title}" loading="lazy">
+                        </figure>
+                        <div class="project-content">
+                            <div class="blog-meta">
+                                <p class="blog-category">${project.category}</p>
+                                <span class="dot"></span>
+                                <time datetime="${project.date}">${new Date(project.date).toLocaleDateString()}</time>
+                            </div>
+                            <h4 class="project-title">${project.title}</h4>
+                            <p class="project-description">${project.description}</p>
+                        </div>
+                    </a>
+                `;
+
+                projectsList.appendChild(li);
+            });
+        })
+        .catch((error) => console.error('JSON 데이터를 가져오는 중 오류:', error));
+}
+
+// DOMContentLoaded 시 실행
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver(() => {
+        const projectsList = document.querySelector('.testimonials-list');
+        if (projectsList) {
+            observer.disconnect();
+        }
+    });
+
+    const targetNode = document.body; // body를 감시
+    observer.observe(targetNode, { childList: true, subtree: true });
+});
 
 function loadBlogCategories() {
     fetch('./posts.json')
