@@ -159,7 +159,7 @@ function loadCategoryPosts(category) {
         li.className = 'blog-post-item';
 
         li.innerHTML = `
-            <a href="#" class="post-link">
+            <a class="post-link">
                 <h3 class="post-title">${post.title}</h3>
                 <p class="post-summary">${post.summary}</p>
                 <div class="post-meta">
