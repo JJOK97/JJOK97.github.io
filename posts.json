@@ -14,15 +14,6 @@
                     "image": "./assets/images/blog-1.jpg",
                     "tags": ["기초", "복잡도", "Big-O"],
                     "content": "algorithm/basics.md"
-                },
-                {
-                    "id": "sorting-algorithms",
-                    "title": "정렬 알고리즘 완벽 가이드",
-                    "summary": "다양한 정렬 알고리즘의 특징과 구현 방법을 비교 분석합니다.",
-                    "date": "2024-01-20",
-                    "image": "./assets/images/blog-2.jpg",
-                    "tags": ["정렬", "구현", "최적화"],
-                    "file": "algorithm/sorting.html"
                 }
             ]
         },

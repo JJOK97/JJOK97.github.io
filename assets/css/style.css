@@ -223,14 +223,18 @@ article.active {
 
 .h2 {
     font-size: var(--fs-1);
+    letter-spacing: 0.6px;
 }
 
 .h3 {
     font-size: var(--fs-2);
+    letter-spacing: 0.6px;
 }
 
 .h4 {
     font-size: var(--fs-4);
+    font-weight: var(--fw-500);
+    letter-spacing: 0.6px;
 }
 
 .h5 {
@@ -626,24 +630,25 @@ main {
     overflow: hidden;
 }
 
-section.testimonials > ul > li > a {
-    width: 22rem;
+section.testimonials > ul > li > .project-link {
+    width: 25rem;
 }
 
-section.testimonials > ul > li > a > div > div > p,
-section.testimonials > ul > li > a > div > div > time {
+section.testimonials > ul > li > .project-link > div > div > p,
+section.testimonials > ul > li > .project-link > div > div > time {
     font-size: var(--fs-5) !important;
     margin-left: 0 !important;
 }
 
-section.testimonials > ul > li > a > div > p {
+section.testimonials > ul > li > .project-link > div > p {
     margin-left: 5px;
     margin-top: 5px;
     color: white;
 }
 
 section.testimonials > ul > li {
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 /**
@@ -712,6 +717,59 @@ section.testimonials > ul > li {
 .modal-container.active .testimonials-modal {
     transform: scale(1);
     opacity: 1;
+    min-height: 700px;
+    max-height: 80vh;
+    overflow-y: hidden;
+}
+
+/* 모달 기본 스타일 수정 */
+.testimonials-modal {
+    width: 90%; /* 기본적으로 화면의 90% */
+    max-width: 1000px; /* 최대 너비 제한 */
+    margin: 20px auto; /* 중앙 정렬 */
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 580px) {
+    .testimonials-modal {
+        width: 95%; /* 더 작은 화면에서는 95%로 */
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .portfolio-detail .filter-list {
+        gap: 10px;
+    }
+}
+
+/* 태블릿 화면 대응 */
+@media (min-width: 581px) and (max-width: 768px) {
+    .testimonials-modal {
+        width: 92%;
+        margin: 15px auto;
+    }
+}
+
+/* 작은 데스크톱 화면 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .testimonials-modal {
+        width: 85%;
+        max-width: 800px;
+    }
+}
+
+/* 큰 데스크톱 화면 */
+@media (min-width: 1025px) {
+    .testimonials-modal {
+        width: 80%;
+        max-width: 1000px;
+    }
+}
+
+/* 콘텐츠가 넘치지 않도록 */
+.testimonials-modal .portfolio-detail {
+    max-width: 100%;
+    min-width: 100%;
 }
 
 .modal-close-btn {
@@ -730,13 +788,17 @@ section.testimonials > ul > li {
     opacity: 0.7;
 }
 
-.modal-close-btn:hover,
+#modal-section-content .modal-close-btn:hover,
 .modal-close-btn:focus {
     opacity: 1;
 }
 
 .modal-close-btn ion-icon {
     --ionicon-stroke-width: 50px;
+}
+
+#content-container > article > div > section > div > section > ul {
+    margin: 0 0 30px 0;
 }
 
 .modal-avatar-box {
@@ -767,6 +829,58 @@ section.testimonials > ul > li {
     font-size: var(--fs-6);
     font-weight: var(--fw-300);
     line-height: 1.6;
+}
+
+#modal-section-content {
+    height: calc(80vh - 20px);
+    overflow-y: auto;
+}
+
+/* 태블릿 화면 */
+@media (max-width: 768px) {
+    #modal-section-content {
+        height: calc(80vh - 80px);
+    }
+}
+
+/* 모바일 화면 */
+@media (max-width: 580px) {
+    #modal-section-content {
+        height: calc(80vh - 100px);
+    }
+}
+
+#modal-section-content > div {
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    padding-right: 10px;
+}
+
+#modal-section-content > div::-webkit-scrollbar {
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#modal-section-content > div::-webkit-scrollbar-track {
+    background: var(--onyx);
+    border-radius: 5px;
+}
+
+#modal-section-content > div::-webkit-scrollbar-thumb {
+    background: var(--orange-yellow-crayola);
+    border-radius: 5px;
+    background-clip: padding-box;
+}
+
+#modal-section-content > div::-webkit-scrollbar-button {
+    width: 20px;
 }
 
 /**
@@ -1183,12 +1297,10 @@ section.testimonials > ul > li {
 }
 
 .detail-title {
-    font-weight: 500;
     letter-spacing: 0.7px;
 }
 
 .detail-subtitle {
-    font-weight: 500;
     letter-spacing: 0.6px;
 }
 
@@ -1767,7 +1879,7 @@ section.testimonials > ul > li {
 
 @media (min-width: 768px) {
     .tech-stacks {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: 1fr;
     }
 
     .features-grid {
@@ -3247,7 +3359,7 @@ textarea.form-input::-webkit-resizer {
     /* testimonials */
 
     .testimonials-item {
-        min-width: calc(50% - 15px);
+        min-width: calc(40%);
     }
 
     /* clients */
@@ -3408,6 +3520,10 @@ textarea.form-input::-webkit-resizer {
 	 */
 
     .timeline-text {
-        max-width: 700px;
+        max-width: 800px;
+    }
+
+    .tech-stacks {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

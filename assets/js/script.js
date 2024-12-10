@@ -47,21 +47,34 @@ function loadPage(pageName) {
         });
 }
 
-// 상위 5개 프로젝트 표시
 function displayTopProjects() {
     const projectsList = document.querySelector('.testimonials-list');
+    if (!projectsList) return;
 
     fetch('./project.json')
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch project data');
+            }
+            return response.json();
+        })
         .then((data) => {
-            const topProjects = data.projects.slice(0, 5); // 상위 5개만 선택
+            if (!data || !data.projects) {
+                throw new Error('Invalid project data format');
+            }
+
+            const topProjects = data.projects.slice(0, 5);
+            projectsList.innerHTML = ''; // 기존 내용 초기화
 
             topProjects.forEach((project) => {
+                const projectName = project.file.split('/')[0];
                 const li = document.createElement('li');
-                li.className = 'project-item';
+                li.className = 'testimonials-item';
+                li.setAttribute('data-testimonials-item', '');
+                li.setAttribute('data-project', projectName);
 
                 li.innerHTML = `
-                    <a href="${project.file}" class="project-link">
+                    <div class="project-link">
                         <figure class="project-img">
                             <div class="project-item-icon-box">
                                 <ion-icon name="eye-outline"></ion-icon>
@@ -77,13 +90,18 @@ function displayTopProjects() {
                             <h4 class="project-title">${project.title}</h4>
                             <p class="project-description">${project.description}</p>
                         </div>
-                    </a>
+                    </div>
                 `;
 
                 projectsList.appendChild(li);
             });
+
+            setupTestimonialsModal();
         })
-        .catch((error) => console.error('JSON 데이터를 가져오는 중 오류:', error));
+        .catch((error) => {
+            console.error('프로젝트 데이터를 가져오는 중 오류:', error);
+            projectsList.innerHTML = '<li>프로젝트를 불러오는 중 오류가 발생했습니다.</li>';
+        });
 }
 
 // DOMContentLoaded 시 실행
@@ -98,6 +116,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetNode = document.body; // body를 감시
     observer.observe(targetNode, { childList: true, subtree: true });
 });
+
+function initializeModalNav(projectName) {
+    const sectionBtns = document.querySelectorAll('.testimonials-modal [data-section-btn]');
+    const modalSectionContent = document.getElementById('modal-section-content');
+
+    sectionBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            // 활성 버튼 표시
+            sectionBtns.forEach((b) => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 섹션 로드
+            const section = btn.getAttribute('data-section');
+            loadModalSection(section, projectName);
+        });
+    });
+}
+
+// 모달 섹션 콘텐츠 로드
+function loadModalSection(sectionName, projectName) {
+    const modalSectionContent = document.getElementById('modal-section-content');
+
+    fetch(`./pages/portfolio/${projectName}/${sectionName}.html`)
+        .then((res) => {
+            if (!res.ok) throw new Error('Page not found');
+            return res.text();
+        })
+        .then((html) => {
+            if (modalSectionContent) {
+                modalSectionContent.innerHTML = html;
+            }
+        })
+        .catch((err) => {
+            console.error(`섹션 로딩 오류: ${sectionName}`, err);
+            modalSectionContent.innerHTML = '<p>콘텐츠를 불러오는 중 오류가 발생했습니다.</p>';
+        });
+}
+
+function setupTestimonialsModal() {
+    const testimonialsItems = document.querySelectorAll('.testimonials-item');
+    const modalContainer = document.querySelector('[data-modal-container]');
+    const overlay = document.querySelector('[data-overlay]');
+
+    // 각 testimonials 아이템에 대한 클릭 이벤트 설정
+    if (testimonialsItems) {
+        testimonialsItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const projectName = item.getAttribute('data-project');
+                if (modalContainer && overlay && projectName) {
+                    modalContainer.classList.add('active');
+                    overlay.classList.add('active');
+
+                    // 초기 섹션(overview) 로드
+                    loadModalSection('overview', projectName);
+                    initializeModalNav(projectName);
+                }
+            });
+        });
+    }
+
+    // 모달 닫기 함수
+    const closeModal = () => {
+        if (modalContainer && overlay) {
+            modalContainer.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    };
+
+    // 오버레이 클릭 시 모달 닫기
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
+    }
+}
 
 function loadBlogCategories() {
     fetch('./posts.json')
