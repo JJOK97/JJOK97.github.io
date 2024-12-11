@@ -9,12 +9,12 @@
             "file": "fitnect/index.html"
         },
         {
-            "title": "Orizon",
-            "date": "2022-02-23",
-            "category": "Web development",
+            "title": "Widus",
+            "date": "2023-11-16",
+            "category": "Team Project",
             "image": "./assets/images/project-2.png",
-            "description": "위치기반 운동 시설 종합 정보 및 예약/결제 서비스",
-            "file": "project2.html"
+            "description": "전사적 프로젝트 관리와 인사 관리를 위한 ERP & 협업 툴",
+            "file": "widus/index.html"
         },
         {
             "title": "Fundo",

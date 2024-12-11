@@ -44,7 +44,7 @@
    */
 
     /* font-family */
-    --ff-poppins: 'Poppins', 'Jua', sans-serif;
+    --ff-poppins: 'Jua', 'Poppins', sans-serif;
 
     /* font-size */
     --fs-1: 24px;
@@ -3531,4 +3531,95 @@ textarea.form-input::-webkit-resizer {
 
 .modal-container.active .tech-stacks {
     grid-template-columns: 1fr; /* 1줄로 표시 */
+}
+.improvement-sections {
+    display: grid;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.improvement-section {
+    background: var(--eerie-black-1);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.improvement-title {
+    color: var(--orange-yellow-crayola);
+    margin-bottom: 15px;
+    font-size: var(--fs-5);
+}
+
+.improvement-list {
+    list-style: none;
+    padding: 0;
+}
+
+.improvement-list li {
+    margin-bottom: 15px;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-text {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    line-height: 1.6;
+}
+
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 6px;
+    background: var(--jet);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--orange-yellow-crayola);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    font-size: var(--fs-7);
+    color: var(--light-gray);
+    min-width: 35px;
+}
+
+/* 반응형 스타일 */
+@media (min-width: 580px) {
+    .task-info {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .progress-wrapper {
+        min-width: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .improvement-sections {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 580px) {
+    .progress-wrapper {
+        margin-left: 10px;
+    }
 }
