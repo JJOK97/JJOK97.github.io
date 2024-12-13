@@ -10,19 +10,19 @@
         },
         {
             "title": "Fitnect",
-            "date": "2022-02-23",
-            "category": "Web development",
+            "date": "2024-07-01",
+            "category": "Team Project",
             "image": "./assets/images/project-1.jpg",
-            "description": "실시간 사용자 위치 기반 운동 시설 정보 제공 및 예약/결제 서비스",
+            "description": "실시간 위치 기반 운동 시설 정보 제공 및 예약/결제 서비스",
             "file": "fitnect/index.html"
         },
         {
-            "title": "Fundo",
-            "date": "2022-02-23",
-            "category": "Web design",
+            "title": "PicPle",
+            "date": "2024-08-22",
+            "category": "Team Project",
             "image": "./assets/images/project-3.jpg",
-            "description": "위치기반 운동 시설 종합 정보 및 예약/결제 서비스",
-            "file": "project3.html"
+            "description": "실시간 화상 공유 및 AI 기반 이미지 생성 포토부스 서비스",
+            "file": "picple/index.html"
         },
         {
             "title": "Brawlhalla",
