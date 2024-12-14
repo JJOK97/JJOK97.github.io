@@ -2,18 +2,12 @@
   #style.css
 \*-----------------------------------*/
 
-/**
- * copyright 2022 @codewithsadee
- */
-
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 
 :root {
-    /**
-   * colors
-   */
+    /* colors */
 
     /* gradient */
 
@@ -39,9 +33,7 @@
     --light-gray-70: hsla(0, 0%, 84%, 0.7);
     --bittersweet-shimmer: hsl(0, 43%, 51%);
 
-    /**
-   * typography
-   */
+    /* typography */
 
     /* font-family */
     --ff-poppins: 'Jua', 'Poppins', sans-serif;
@@ -62,9 +54,7 @@
     --fw-500: 500;
     --fw-600: 600;
 
-    /**
-   * shadow
-   */
+    /* hadow */
 
     --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
     --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
@@ -72,9 +62,7 @@
     --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
     --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
 
-    /**
-   * transition
-   */
+    /* transition */
 
     --transition-1: 0.25s ease;
     --transition-2: 0.5s ease-in-out;
@@ -518,9 +506,7 @@ main {
     margin-bottom: 15px;
 }
 
-/**
- * #service 
- */
+/* #service */
 
 .service {
     margin-bottom: 35px;
@@ -577,9 +563,7 @@ main {
     line-height: 1.6;
 }
 
-/**
- * #testimonials 
- */
+/* #testimonials */
 
 .testimonials {
     margin-bottom: 30px;
@@ -651,10 +635,7 @@ section.testimonials > ul > li {
     justify-content: center;
 }
 
-/**
- * #testimonials-modal
- */
-
+/* #testimonials-modal */
 .modal-container {
     position: fixed;
     top: 0;
@@ -884,9 +865,7 @@ section.testimonials > ul > li {
     width: 20px;
 }
 
-/**
- * #clients 
- */
+/* #clients */
 
 .clients {
     margin-bottom: 15px;
@@ -930,9 +909,7 @@ section.testimonials > ul > li {
     margin-bottom: 30px;
 }
 
-/**
- * education and experience 
- */
+/* education and experience */
 
 .timeline {
     margin-bottom: 60px;
@@ -1063,9 +1040,7 @@ section.testimonials > ul > li {
     line-height: 1.6;
 }
 
-/**
- * skills 
- */
+/* skills */
 
 .skills-title {
     margin-bottom: 20px;
@@ -1291,10 +1266,10 @@ section.testimonials > ul > li {
 .detail-title,
 .info-text,
 .code-title {
-    letter-spacing: 0.5px; /* 글자 간격 */
-    word-spacing: 2px; /* 단어 간격 */
-    line-height: 1.8; /* 줄 간격 */
-    font-weight: 400; /* 폰트 두께 */
+    letter-spacing: 0.5px;
+    word-spacing: 2px;
+    line-height: 1.8;
+    font-weight: 400;
 }
 
 .detail-title {
@@ -1420,7 +1395,7 @@ section.testimonials > ul > li {
 
     .portfolio-detail .filter-item button:hover .button-icon,
     .portfolio-detail .filter-item button.active .button-icon {
-        color: var(--orange-yellow-crayola); /* hover/active 시 색상 변경 */
+        color: var(--orange-yellow-crayola);
     }
 }
 
@@ -1874,9 +1849,7 @@ section.testimonials > ul > li {
     font-size: var(--fs-6);
 }
 
-/**
-* responsive larger than 768px
-*/
+/* responsive larger than 768px */
 
 @media (min-width: 768px) {
     .tech-stacks {
@@ -1896,9 +1869,7 @@ section.testimonials > ul > li {
     }
 }
 
-/**
-* responsive larger than 1250px
-*/
+/* responsive larger than 1250px */
 
 @media (min-width: 1250px) {
     .portfolio-detail {
@@ -2827,22 +2798,16 @@ textarea.form-input::-webkit-resizer {
   #RESPONSIVE
 \*-----------------------------------*/
 
-/**
- * responsive larger than 450px screen
- */
+/* responsive larger than 450px screen */
 
 @media (min-width: 450px) {
-    /**
-   * client
-   */
+    /* client */
 
     .clients-item {
         min-width: calc(33.33% - 10px);
     }
 
-    /**
-   * #PORTFOLIO, BLOG 
-   */
+    /* #PORTFOLIO, BLOG */
 
     .project-img,
     .blog-banner-box {
@@ -2850,20 +2815,13 @@ textarea.form-input::-webkit-resizer {
     }
 }
 
-/**
- * responsive larger than 580px screen
- */
+/* responsive larger than 580px screen */
 
 @media (min-width: 580px) {
-    /**
-   * CUSTOM PROPERTY
-   */
+    /* USTOM PROPERTY */
 
     :root {
-        /**
-     * typography
-     */
-
+        /* typography */
         --fs-1: 32px;
         --fs-2: 24px;
         --fs-3: 26px;
@@ -2873,9 +2831,7 @@ textarea.form-input::-webkit-resizer {
         --fs-8: 12px;
     }
 
-    /**
-   * #REUSED STYLE
-   */
+    /* #REUSED STYLE */
 
     .sidebar,
     article {
@@ -2901,18 +2857,14 @@ textarea.form-input::-webkit-resizer {
         font-size: 18px;
     }
 
-    /**
-   * #MAIN
-   */
+    /* #MAIN */
 
     main {
         margin-top: 60px;
         margin-bottom: 100px;
     }
 
-    /**
-   * #SIDEBAR
-   */
+    /* #SIDEBAR */
 
     .sidebar {
         max-height: 180px;
@@ -2972,9 +2924,7 @@ textarea.form-input::-webkit-resizer {
         width: calc(100% - 64px);
     }
 
-    /**
-   * #NAVBAR
-   */
+    /* #NAVBAR */
 
     .navbar {
         border-radius: 20px 20px 0 0;
@@ -2988,9 +2938,7 @@ textarea.form-input::-webkit-resizer {
         --fs-8: 14px;
     }
 
-    /**
-   * #ABOUT
-   */
+    /* #ABOUT */
 
     .about .article-title {
         margin-bottom: 20px;
@@ -3101,9 +3049,7 @@ textarea.form-input::-webkit-resizer {
         min-width: calc(33.33% - 35px);
     }
 
-    /**
-   * #RESUME
-   */
+    /* #RESUME */
 
     .timeline-list {
         margin-left: 65px;
@@ -3123,9 +3069,7 @@ textarea.form-input::-webkit-resizer {
         margin-bottom: 25px;
     }
 
-    /**
-   * #PORTFOLIO, BLOG
-   */
+    /* #PORTFOLIO, BLOG */
 
     .project-img,
     .blog-banner-box {
@@ -3140,9 +3084,7 @@ textarea.form-input::-webkit-resizer {
         padding: 25px;
     }
 
-    /**
-   * #CONTACT
-   */
+    /* #CONTACT */
 
     .mapbox {
         height: 380px;
@@ -3172,14 +3114,10 @@ textarea.form-input::-webkit-resizer {
     }
 }
 
-/**
- * responsive larger than 768px screen
- */
+/* responsive larger than 768px screen */
 
 @media (min-width: 768px) {
-    /**
-   * REUSED STYLE
-   */
+    /* REUSED STYLE */
 
     .sidebar,
     article {
@@ -3190,26 +3128,20 @@ textarea.form-input::-webkit-resizer {
         width: 100px;
     }
 
-    /**
-   * SIDEBAR
-   */
+    /* SIDEBAR */
 
     .contacts-list {
         grid-template-columns: 1fr 1fr;
         gap: 30px 15px;
     }
 
-    /**
-   * NAVBAR
-   */
+    /* NAVBAR */
 
     .navbar-link {
         --fs-8: 15px;
     }
 
-    /**
-   * ABOUT
-   */
+    /* ABOUT */
 
     /* testimonials modal */
 
@@ -3222,9 +3154,7 @@ textarea.form-input::-webkit-resizer {
         width: 80px;
     }
 
-    /**
-   * PORTFOLIO
-   */
+    /* PORTFOLIO */
 
     .article-title {
         padding-bottom: 20px;
@@ -3264,9 +3194,7 @@ textarea.form-input::-webkit-resizer {
         grid-template-columns: 1fr 1fr;
     }
 
-    /**
-   * CONTACT
-   */
+    /* CONTACT */
 
     .input-wrapper {
         grid-template-columns: 1fr 1fr;
@@ -3278,28 +3206,20 @@ textarea.form-input::-webkit-resizer {
     }
 }
 
-/**
- * responsive larger than 1024px screen
- */
+/* responsive larger than 1024px screen */
 
 @media (min-width: 1024px) {
-    /**
-   * CUSTOM PROPERTY
-   */
+    /* CUSTOM PROPERTY */
 
     :root {
-        /**
-    * shadow
-    */
+        /* shadow */
 
         --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
         --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
         --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
     }
 
-    /**
-   * REUSED STYLE
-   */
+    /* REUSED STYLE */
 
     .sidebar,
     article {
@@ -3307,9 +3227,7 @@ textarea.form-input::-webkit-resizer {
         box-shadow: var(--shadow-5);
     }
 
-    /**
-   * MAIN 
-   */
+    /* MAIN */
 
     main {
         margin-bottom: 60px;
@@ -3321,9 +3239,7 @@ textarea.form-input::-webkit-resizer {
         margin: auto;
     }
 
-    /**
-   * NAVBAR
-   */
+    /* NAVBAR */
 
     .navbar {
         position: absolute;
@@ -3346,9 +3262,7 @@ textarea.form-input::-webkit-resizer {
         font-weight: var(--fw-500);
     }
 
-    /**
-   * ABOUT
-   */
+    /* ABOUT */
 
     /* service */
 
@@ -3369,31 +3283,23 @@ textarea.form-input::-webkit-resizer {
         min-width: calc(25% - 38px);
     }
 
-    /**
-   * PORTFOLIO
-   */
+    /* PORTFOLIO */
 
     .project-list {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /**
-   * BLOG
-   */
+    /* BLOG */
 
     .blog-banner-box {
         height: 230px;
     }
 }
 
-/**
- * responsive larger than 1250px screen
- */
+/* responsive larger than 1250px screen */
 
 @media (min-width: 1250px) {
-    /**
-   * RESET
-   */
+    /* RESET */
 
     body::-webkit-scrollbar {
         width: 20px;
@@ -3418,9 +3324,7 @@ textarea.form-input::-webkit-resizer {
         height: 60px;
     }
 
-    /**
-   * REUSED STYLE
-   */
+    /* REUSED STYLE */
 
     .sidebar,
     article {
@@ -3431,9 +3335,7 @@ textarea.form-input::-webkit-resizer {
         min-height: 100%;
     }
 
-    /**
-   * MAIN
-   */
+    /* MAIN */
 
     main {
         max-width: 1300px;
@@ -3450,9 +3352,7 @@ textarea.form-input::-webkit-resizer {
         margin: 0;
     }
 
-    /**
-   * SIDEBAR
-   */
+    /* SIDEBAR */
 
     .sidebar {
         position: sticky;
@@ -3516,9 +3416,7 @@ textarea.form-input::-webkit-resizer {
         justify-content: center;
     }
 
-    /**
-	 * RESUME
-	 */
+    /* RESUME */
 
     .timeline-text {
         max-width: 800px;
