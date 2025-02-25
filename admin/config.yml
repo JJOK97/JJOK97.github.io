@@ -2,7 +2,8 @@ backend:
     name: github
     repo: JJOK97/jjok97.github.io
     branch: main
-    base_url: https://api.netlify.com
+    auth_type: implicit
+    app_id: Ov23liT3MSge4uIQdtJf
 
 media_folder: 'assets/images/uploads'
 public_folder: '/assets/images/uploads'
