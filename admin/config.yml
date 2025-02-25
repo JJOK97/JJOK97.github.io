@@ -1,0 +1,35 @@
+backend:
+    name: github
+    repo: JJOK97/jjok97.github.io
+    branch: main
+    base_url: https://api.netlify.com
+
+media_folder: 'assets/images/uploads'
+public_folder: '/assets/images/uploads'
+
+locale: 'ko'
+
+collections:
+    - name: 'post'
+      label: '블로그 포스트'
+      folder: '_posts'
+      create: true
+      slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+      editor:
+          preview: true
+      fields:
+          - { label: '레이아웃', name: 'layout', widget: 'hidden', default: 'post' }
+          - { label: '제목', name: 'title', widget: 'string' }
+          - { label: '작성자', name: 'author', widget: 'string', default: 'Jinseok', required: false }
+          - { label: '발행일', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD HH:mm:ss Z' }
+          - { label: '태그', name: 'tags', widget: 'list', required: false }
+          - { label: '댓글 허용', name: 'comments', widget: 'boolean', default: false, required: false }
+          - { label: '발췌문 구분자 추가', name: 'excerpt_separator', widget: 'hidden', default: '<!--more-->' }
+          - { label: '상단 고정', name: 'sticky', widget: 'boolean', default: false, required: false }
+          - { label: '페이지네이션에서 숨기기', name: 'hidden', widget: 'boolean', default: false, required: false }
+          - {
+                label: '본문',
+                name: 'body',
+                widget: 'markdown',
+                hint: '발췌문을 지정하려면 원하는 위치에 <!--more--> 를 삽입하세요',
+            }
