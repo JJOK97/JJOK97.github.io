@@ -24,3 +24,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # Webrick (Ruby 3.0 이상 필요)
 gem "webrick", "~> 1.7"
+
+gem 'ffi', '~> 1.15.5'
