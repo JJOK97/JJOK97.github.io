@@ -5,12 +5,32 @@ author: 'Jinseok'
 permalink: /about/
 ---
 
-A friend of mine writes short stories. One sunny day, I asked if he wanted a website to showcase his works and he agreed. I decided to use GitHub Pages to host his site. That way he wouldn't have to buy a domain and a server.
+안녕하세요! 금융 IT 개발자를 꿈꾸는 옥진석입니다.
 
-While doing some research up on GitHub Pages, I accidentally chanced upon this _simple, blog-aware, static site generator_ called [Jekyll](https://jekyllrb.com/) which works really well with GitHub Pages. I figured it would do just fine for my friend and I set about searching for a pretty theme. I wanted a theme with a _book-ish_ vibe. Unfortunately, most of the themes were too modern. Eventually, I caved and begun working on my own theme. With the help of [Poole](https://github.com/poole/poole), the Jekyll Butler, I was able to build **Tale**.
+학부 시절 투자론 수업을 기점으로 금융과 투자에 대한 관심이 깊어졌고, 다양한 투자대회에 참가하며 금융업에서 일하는 미래를 꿈꿔왔습니다.
 
-## Contribute
+그러던 중 IT 기술이 발전하면서 금융 서비스와 결합되어 단순한 자산 관리나 투자 수단을 넘어 더 많은 사람들이 쉽고 편리하게 활용할 수 있는 방향으로 더욱 성장 할 수 있다는 가능성을 발견했고, 이를 실현하는 금융 IT 개발자로 성장하고자 합니다.
 
-Feel free to create an issue or make a pull request on [GitHub](https://github.com/chesterhow/tale).
+<br>
 
-Thanks for reading!
+### 저는 이런사람입니다.
+
+**[ 문제 해결을 즐기고, 고민하기를 좋아하는 개발자 ]**  
+문제에 따라 수 많은 시도와 고민이 있어야 성과에 따른 성취를 깊이 경험할 수 있고, 실패하더라도 다시 일어설 수 있다고 생각합니다.
+
+**[ 금융 시장의 트렌드를 주시하며, FinTech와 개발 기술을 꾸준히 학습하는 개발자 ]**  
+학부 시절부터 다져온 전문적인 금융지식을 바탕으로, 다양한 프로젝트에 적용하여 금융 IT 기술을 갖춘 개발자로 성장하고 있습니다.
+
+**[ 개발 규칙을 지키는 것을 좋아하며, 하나의 팀으로 협업하는 개발자 ]**  
+프로젝트 환경과 팀의 특색에 맞는 개발 문화를 만들어나가고, 하나의 목표를 향해 효율적으로 나아가는 것을 지향합니다.
+
+서비스를 개발할 때 단순히 기능을 구현하는 것만으로는 충분하지 않다고 생각합니다. 기술을 적용할 때에 기반이 되는 원리를 이해하고, 기술이 금융 서비스에 어떻게 적용될 수 있는지 고민하는 과정이 필요합니다. 기능을 만드는 것에만 집중하면 유지보수나 확장성을 고려하지 못해 예상치 못한 문제가 발생할 수 있습니다. 새로운 기술을 배울 때도 단순히 사용법을 익히는 것이 아니라, 왜 이 기술이 필요한지, 기존 방식과 비교했을 때 어떤 차이가 있는지 분석하며 적용하려고 합니다.
+
+이러한 원칙을 바탕으로 책, 인터넷 강의, 소스 코드 분석 등 다양한 방법을 통해 프로젝트에서 발생하는 문제를 해결하고 학습하고 있으며, 이렇게 얻게 된 지식을 바탕으로 서비스의 안정성과 확장성을 고려한 개발을 지향하고 있습니다.
+
+<br>
+
+### 마치며...
+
+이제는 다양한 금융 서비스 개발을 바탕으로 새로운 기회를 찾고 있습니다.  
+함께 일하고 싶다면 아래의 연락처로 연락바랍니다!
