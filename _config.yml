@@ -7,6 +7,10 @@ url: 'https://jjok97.github.io'
 # Google Analytics
 # google_analytics: UA—XXXXXXXX-X
 
+# SEO 관련 설정
+lang: ko-KR # 한국어 사이트임을 명시
+timezone: Asia/Seoul # 한국 시간대 설정
+
 # Author
 author:
     name: Jinseok
@@ -24,6 +28,7 @@ sass:
 
 # Gems
 plugins:
+    - jekyll-sitemap
     - jekyll-feed
     - jekyll-paginate
     - jekyll-seo-tag
