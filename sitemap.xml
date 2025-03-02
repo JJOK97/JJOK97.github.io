@@ -2,30 +2,26 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- 메인 페이지 -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>{{ site.url }}/</loc>
+        <loc>{{ site.url | xml_escape }}</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-    
-    <!-- 블로그 포스트 -->
+
     {% for post in site.posts %}
     <url>
-        <loc>{{ site.url }}{{ post.url }}</loc>
-        <lastmod>{{ post.lastmod | default: post.date | date_to_xmlschema }}</lastmod>
+        <loc>{{ site.url }}{{ post.url | xml_escape }}</loc>
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     {% endfor %}
-    
-    <!-- 정적 페이지 -->
+
     {% for page in site.pages %}
-    {% if page.layout != null and page.layout != 'feed' and page.sitemap != false %}
+    {% if page.layout != null and page.layout != 'feed' %}
     <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
+        <loc>{{ site.url }}{{ page.url | xml_escape }}</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
