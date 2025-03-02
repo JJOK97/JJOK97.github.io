@@ -1,12 +1,13 @@
 ---
 layout: post
-title: '기초 DB에 관한 간단한 고찰'
+title: 'SQL의 코드 최적화에 대한 고찰'
 author: 'Jinseok'
+discription: 'SQL의 다중 서브쿼리 사용법과 NULL 처리, 중복 제거 등을 통해 성능 최적화를 해보자.'
 tags: [SQL, 스마트인재개발원, 회고록]
 excerpt_separator: <!--more-->
 ---
 
-DB에서 좋은 코드란 무엇일까?
+오늘의 DB 실수에서 배운 점... DB에서 좋은 코드란 무엇일까?
 
 <!--more-->
 
