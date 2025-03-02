@@ -91,23 +91,25 @@ permalink: /tags/
         postsSection.classList.toggle('show');
     }
 
+    // 페이지 로드 시 Tale 태그 이동
     window.addEventListener('load', moveTaleTagToEnd);
 
+    // 태그 클릭 시 해당 태그 아이템을 최상단으로 이동
     document.querySelectorAll('.tags-clouds a').forEach((link) => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
+            const tagsContainer = document.querySelector('.tags');
 
             if (targetElement) {
+                // Tale 태그가 아닌 경우에만 이동
+                if (targetId !== 'Tale') {
+                    // tags-clouds와 첫 번째 tags-item 사이에 삽입
+                    const firstItem = document.querySelector('.tags-item');
+                    tagsContainer.insertBefore(targetElement, firstItem);
+                }
                 targetElement.scrollIntoView({ behavior: 'smooth' });
-
-                const postsSection = document.getElementById(`posts-${targetId}`);
-                const header = targetElement.querySelector('.tags-item-header');
-                const dropdownButton = header.querySelector('.dropdown-toggle');
-
-                dropdownButton.classList.add('active');
-                postsSection.classList.add('show');
             }
         });
     });
