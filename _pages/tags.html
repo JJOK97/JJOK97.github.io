@@ -15,11 +15,8 @@ permalink: /tags/
         {% endfor %}
     </div>
     {% for tag in site.tags %}
-    <div
-        class="tags-item"
-        id="{{ tag[0] }}"
-    >
-        <div class="tags-item-header">
+    <div class="tags-item" id="{{ tag[0] }}">
+        <div class="tags-item-header" onclick="togglePosts('posts-{{ tag[0] }}')">
             <div class="tags-item-title">
                 <svg
                     class="tags-item-icon"
@@ -34,19 +31,11 @@ permalink: /tags/
                     stroke-linejoin="round"
                 >
                     <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                    <line
-                        x1="7"
-                        y1="7"
-                        x2="7.01"
-                        y2="7"
-                    ></line>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
                 </svg>
                 <h2 class="tags-item-label">{{ tag[0] }}</h2>
             </div>
-            <button
-                class="dropdown-toggle"
-                onclick="togglePosts('posts-{{ tag[0] }}')"
-            >
+            <button class="dropdown-toggle" onclick="togglePosts('posts-{{ tag[0] }}', event)">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -62,15 +51,9 @@ permalink: /tags/
                 </svg>
             </button>
         </div>
-        <div
-            class="tags-posts"
-            id="posts-{{ tag[0] }}"
-        >
+        <div class="tags-posts" id="posts-{{ tag[0] }}">
             {% for post in tag[1] %}
-            <a
-                class="tags-post"
-                href="{{ post.url | prepend: site.baseurl }}"
-            >
+            <a class="tags-post" href="{{ post.url | prepend: site.baseurl }}">
                 <div>
                     <span class="tags-post-title">{{ post.title }}</span>
                     <div class="tags-post-line"></div>
@@ -86,11 +69,46 @@ permalink: /tags/
 </div>
 
 <script>
-    function togglePosts(tagId) {
-        const postsSection = document.getElementById(tagId);
-        const button = event.currentTarget;
+    function moveTaleTagToEnd() {
+        const tagsContainer = document.querySelector('.tags');
+        const taleTag = document.getElementById('Tale');
+        if (taleTag) {
+            tagsContainer.appendChild(taleTag);
+        }
+    }
 
-        button.classList.toggle('active');
+    function togglePosts(tagId, event) {
+        if (event) {
+            event.stopPropagation();
+        }
+        const postsSection = document.getElementById(tagId);
+        const header = event
+            ? event.currentTarget.closest('.tags-item-header')
+            : document.querySelector(`[id="${tagId}"]`).querySelector('.tags-item-header');
+        const dropdownButton = header.querySelector('.dropdown-toggle');
+
+        dropdownButton.classList.toggle('active');
         postsSection.classList.toggle('show');
     }
+
+    window.addEventListener('load', moveTaleTagToEnd);
+
+    document.querySelectorAll('.tags-clouds a').forEach((link) => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+
+                const postsSection = document.getElementById(`posts-${targetId}`);
+                const header = targetElement.querySelector('.tags-item-header');
+                const dropdownButton = header.querySelector('.dropdown-toggle');
+
+                dropdownButton.classList.add('active');
+                postsSection.classList.add('show');
+            }
+        });
+    });
 </script>
