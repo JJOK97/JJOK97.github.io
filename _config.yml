@@ -38,7 +38,10 @@ plugins:
     - jekyll-feed
     - jekyll-paginate
     - jekyll-seo-tag
-    # - jemoji #Uncomment this to allow emoji in your post
+    - jekyll-redirect-from
+    - jemoji
+    - jekyll-mentions
+    - jekyll-include-cache
 
 # Permalinks
 permalink: /:year-:month-:day/:title
