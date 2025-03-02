@@ -1,13 +1,13 @@
 ---
 layout: post
-title: '[Java] 모듈 시스템 이해하기: "A package name must be specified for module" 오류 해결'
+title: '[Java] 모듈 시스템 이해하기'
 author: 'Jinseok'
-description: 'Java 9에서 도입된 모듈 시스템, JPMS으로 인해 발생하는 패키지 명시 오류의 원인과 해결 방법을 알아보자. Classpath와 Modulepath의 차이점과 실제 개발 환경에서의 선택 방법에 대해서.'
+description: 'Java 9에서 도입된 모듈 시스템, JPMS으로 인해 발생하는 패키지 명시 오류의 원인과 해결 방법을 알아보자. Classpath와 Modulepath의 차이점과 실제 개발 환경에서의 선택 방법에 대해서...'
 tags: [Java, 스마트인재개발원, 회고록]
 excerpt_separator: <!--more-->
 ---
 
-Java의 모듈시스템에 대해서 알아보자.
+"A package name must be specified for module" 오류 해결 방법
 
 <!--more-->
 
