@@ -4,11 +4,6 @@ description: '프로그래밍, 프로젝트 기록, 기술 공유'
 baseurl: ''
 url: 'https://jjok97.github.io'
 
-# 브레드크럼 설정
-breadcrumbs: true
-breadcrumb_home_title: '홈'
-breadcrumb_separator: '>'
-
 # HTML 압축 설정
 compress_html:
     clippings: all
@@ -25,8 +20,8 @@ google_analytics: G-3Y53EETQ1K
 google_site_verification: googledb8efee872003ebc
 
 # SEO 관련 설정
-lang: ko-KR # 한국어 사이트임을 명시
-timezone: Asia/Seoul # 한국 시간대 설정
+lang: ko-KR
+timezone: Asia/Seoul
 
 # Author
 author:
@@ -34,7 +29,7 @@ author:
     url: https://github.com/JJOK97
     email: jsock414@gmail.com
 
-# Social 미디어 (선택사항)
+# Social 미디어
 social:
     github: JJOK97 # GitHub 사용자명
 
@@ -66,7 +61,7 @@ paginate: 5
 # Excludes
 exclude: [Gemfile, Gemfile.lock, tale.gemspec]
 
-# 댓글 시스템 (선택사항)
+# 댓글 시스템
 # utterances: JJOK97/jjok97.github.io # 댓글 시스템으로 utterances를 사용하려면 주석 해제
 
 # RSS 피드 활성화
