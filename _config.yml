@@ -4,6 +4,22 @@ description: '프로그래밍, 프로젝트 기록, 기술 공유'
 baseurl: ''
 url: 'https://jjok97.github.io'
 
+# 브레드크럼 설정
+breadcrumbs: true
+breadcrumb_home_title: '홈'
+breadcrumb_separator: '>'
+
+# HTML 압축 설정
+compress_html:
+    clippings: all
+    comments: ['<!-- ', ' -->']
+    endings: all
+    ignore:
+        envs: [development]
+    blanklines: false
+    profile: false
+    startings: [html, head, body]
+
 # Google 관련 설정
 google_analytics: G-3Y53EETQ1K
 google_site_verification: googledb8efee872003ebc
