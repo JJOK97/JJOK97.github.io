@@ -3,7 +3,7 @@ layout: post
 title: '협업을 하기위한 템플릿 공유'
 author: 'Jinseok'
 description: '개발 프로젝트에서 효율적인 협업을 위한 노션 템플릿 사용법과 주요 섹션별 활용 방안을 소개합니다.'
-tags: [협업, 노션, Git]
+tags: [Notion]
 excerpt_separator: <!--more-->
 ---
 

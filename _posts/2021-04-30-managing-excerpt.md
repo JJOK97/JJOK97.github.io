@@ -2,7 +2,6 @@
 layout: post
 title: 'Managing Excerpt'
 author: 'Chester'
-tags: Tale
 excerpt_separator: <!--more-->
 ---
 
