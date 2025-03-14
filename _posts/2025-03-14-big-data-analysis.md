@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '빅 분 기기'
+title: '빅 분 기'
 author: 'Jinseok'
 description: '빅데이터 분석 기사 자격증에 대한 고찰'
 tags: [자격증]
