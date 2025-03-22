@@ -3,7 +3,7 @@ layout: post
 title: 'Oracle DB 권한 관리와 프로젝트 적용 가이드'
 description: 'Oracle DB 사용자 계정 생성 및 권한 관리 방법과 프로젝트 적용 방법, 권한 관리 전략에 대한 소개'
 author: 'Jinseok'
-tags: [SQL, 스마트인재개발원, 회고록]
+tags: [SQL]
 excerpt_separator: <!--more-->
 ---
 
