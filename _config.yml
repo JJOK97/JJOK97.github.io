@@ -45,7 +45,7 @@ comments:
         num_posts: # 5 (default)
         colorscheme: # "light" (default), "dark"
     utterances:
-        theme: 'github-dark' # "github-light"
+        theme: 'github-light' # "github-dark"
         issue_term: 'pathname'
     staticman:
         branch: # "master"
@@ -105,12 +105,12 @@ author:
     # email            : "youremailhere@xxxxxx.com"
 
     links: # 사이트 링크
-     - label: "Email"
-       icon: "fas fa-fw fa-envelope-square"
-       url: "mailto:jsock414@gmail.com"
-     - label: "Portfolio"
-       icon: "fas fa-fw fa-link"
-       url: "https://jjok97.github.io/portfolio/"
+        - label: 'Email'
+          icon: 'fas fa-fw fa-envelope-square'
+          url: 'mailto:jsock414@gmail.com'
+        - label: 'Portfolio'
+          icon: 'fas fa-fw fa-link'
+          url: 'https://jjok97.github.io/portfolio/'
 #     - label: "Twitter"
 #       icon: "fab fa-fw fa-twitter-square"
 #       # url: "https://twitter.com/"
