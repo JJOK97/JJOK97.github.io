@@ -282,3 +282,6 @@ defaults:
           related: true
           sidebar:
               nav: 'categories'
+          sitemap:
+              changefreq: weekly
+              priority: 0.7
