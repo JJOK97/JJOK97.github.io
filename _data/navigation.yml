@@ -1,0 +1,25 @@
+# main links
+main:
+  - title: "Home"
+    url: https://jjok97.github.io/
+
+  - title: "About"
+    url: /about/
+
+  - title: "GitHub"
+    url: https://github.com/JJOK97
+
+  # - title: "Projects"
+  #   url: /projects/
+
+  # - title: "Categories"
+  #   url: /categories/
+
+# sidebar navigation (categories)
+# 2022.02.15 sidebar update : simple ver.
+categories:
+  - title: "개발 기록"
+    url: /categories/Dev/
+  - title: "TIL"
+    url: /categories/TIL/
+

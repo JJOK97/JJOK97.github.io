@@ -1,37 +1,35 @@
 ---
-layout: post
 title: '[Java] 모듈 시스템 이해하기'
-author: 'Jinseok'
-description: 'Java 9에서 도입된 모듈 시스템, JPMS으로 인해 발생하는 패키지 명시 오류의 원인과 해결 방법을 알아보자. Classpath와 Modulepath의 차이점과 실제 개발 환경에서의 선택 방법에 대해서...'
-tags: [Java]
-excerpt_separator: <!--more-->
+excerpt: '"A package name must be specified for module" 오류 해결 방법'
+
+categories:
+    - TIL
+tags:
+    - [Java]
+
+# permalink: /Dev/template/
+permalink: /TIL/java-module-system/
+
+toc: true
+toc_sticky: true
+
+date: 2025-02-28
+last_modified_at: 2025-02-28
 ---
-
-"A package name must be specified for module" 오류 해결 방법
-
-<!--more-->
 
 클래스를 생성하려고 하자마자 A package name must be specified for module. 라고 뜨는게 아닌가..?
 
-<br>
-
-![image.png](../assets/img/error01.png)
-
-<br>
+![image.png](../../assets/img/error01.png)
 
 번역해 보자면, **패키지 명의 모듈을 위해서 지정되어야 한다.** 라고하는데
 
 Package에 뻔히 default라고 되어있을뿐만 아니라, 그 동안 무수하게 많은 클래스들을 defualt 패키지에 만들어왔었는데 갑자기 안된다고 하니까 자바의 억까가 벌써부터 시작이구나 하는걸 느꼈다.
-
-<br>
 
 승환쌤께서는 `module-info.java`가 해당 문제의 원인이라고 하셨다.
 
 답을 듣고나니 얘가 어떤 원리로 감히 class 생성을 막는가..? 라는 생각이 들더라.
 
 그래서 G선생을 통해서 추가적인 답변을 구해보았다.
-
-<br>
 
 ### 🔍 **오류 발생 원인**
 
@@ -52,22 +50,17 @@ Package에 뻔히 default라고 되어있을뿐만 아니라, 그 동안 무수�
 
 -   컴파일 시에 경로를 순차적으로 탐색하기 때문에, 같은 패키지 내에 있는 클래스가 여러 개 있을 경우 충돌거나 원하지 않는 클래스를 return할 가능성이 높다.
 
-<br>
-
 **2. 캡슐화 불가능하며 접근 제어가 약함**
 
 -   Java의 public 키워드는 Classpath기반에서는 완전히 공개되기 때문에, 개발자가 원하지 않는 클래스도 모든 곳에서 사용될 수 있음.
-
-<br>
 
 **3. Classpath는 실행 시간이 길어질 수 있음**
 
 -   Classpath는 실행될 때 해당하는 클래스가 어디에 있는지 전부 찾아야 함.
 -   즉, Classpath에 포함된 모든 JAR 파일을 뒤져야 해서 속도가 느려질 수 있음.
 
-<br>
-
 그러면 모듈 시스템은 어떻게 사용을 할 수 있는가?
+
 modulepath를 쓰면서 다른 패키지들과 상호작용하려면 **어떤 패키지를 공개할지 명시적으로 선언**해야 한다.
 
 <br>

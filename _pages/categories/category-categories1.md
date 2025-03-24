@@ -1,0 +1,9 @@
+---
+title: "개발 기록"
+layout: category
+permalink: /categories/Dev/
+author_profile: true
+taxonomy: 개발 기록
+sidebar:
+  nav: "categories"
+---

@@ -1,15 +1,23 @@
 ---
-layout: post
-title: '빅 분 기'
-author: 'Jinseok'
-description: '빅데이터 분석 기사 자격증에 대한 고찰'
-tags: [자격증]
-excerpt_separator: <!--more-->
+title: '[Certificate] 빅 분 기'
+excerpt: '빅데이터 분석 기사 자격증에 대한 고찰'
+
+categories:
+    - 개발 기록
+tags:
+    - [자격증, 빅분기, 빅데이터분석기사]
+
+permalink: /Dev/big-data-analysis/
+# permalink: /TIL/template/
+
+toc: true
+toc_sticky: true
+
+date: 2025-03-14
+last_modified_at: 2025-03-14
 ---
 
 빅데이터 분석기사. 요즘 IT 업계에서 가장 뜨거운 자격증 중 하나면서 금융권 개발을 하기에 필수적인 내용이기에 호기롭게 도전장을 내밀었다.
-
-<!--more-->
 
 '데이터에 관심도 있고, 프로그래밍 기초도 있으니 어렵지 않겠지'라는 안일한 생각으로 시작했던 공부가 이렇게 나를 놀라게 할 줄은 몰랐다.
 

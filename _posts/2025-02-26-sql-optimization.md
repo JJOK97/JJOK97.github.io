@@ -1,35 +1,32 @@
 ---
-layout: post
-title: 'SQL의 코드 최적화에 대한 고찰'
-author: 'Jinseok'
-discription: 'SQL의 다중 서브쿼리 사용법과 NULL 처리, 중복 제거 등을 통해 성능 최적화를 해보자.'
-tags: [SQL, 스마트인재개발원, 회고록]
-excerpt_separator: <!--more-->
----
+title: '[SQL] 코드 최적화에 대한 고찰'
+excerpt: '오늘의 DB 실수에서 배운 점... DB에서 좋은 코드란 무엇일까?'
 
-오늘의 DB 실수에서 배운 점... DB에서 좋은 코드란 무엇일까?
+categories:
+    - TIL
+tags:
+    - [SQL, Oracle]
 
-<!--more-->
+# permalink: /Dev/template/
+permalink: /TIL/SQL-OPTIMIZATION/
 
-## 🔍 KPT 회고
+toc: true
+toc_sticky: true
 
+date: 2025-02-26
+last_modified_at: 2025-02-26
 ---
 
 ## **Keep**
 
-**기초적인 부분이라도 흘려듣지않고 부족했던 부분들을 채워나갔던것!**
-
-DB공부를 한동안 안했더니 Oracle과 SQL문법들을 많이 까먹엇었는데, 스마트인재개발원의의 승환쌤의 실습 강의를 통해서 다중 서브쿼리나 DB의 제약조건들에 대해서 다시 한번 이해하게 되었다.
-
-<br>
+**기초적인 부분이라도 흘려듣지않고 부족했던 부분들을 채워나갔던것!**  
+DB공부를 한동안 안했더니 Oracle과 SQL문법들을 많이 까먹엇었는데, 스마트 인재 개발원의 승환쌤의 실습 강의를 통해서 다중 서브쿼리나 DB의 제약조건들에 대해서 다시 한번 이해하게 되었다.
 
 ## **Problem**
 
 **한번 더 고민하지 않았던 것..**
 
 강의 중에 실수로 난이도가 조금 어려웠던 문제를 제출해주셨는데, 문제 해석을 제대로 하지않아 엣지 케이스를 발생시키는 풀이를 하였다.
-
-<br>
 
 **문제**
 
@@ -48,8 +45,6 @@ where department_id in (select department_id
 
 이런식으로 풀이를 하였다.
 
-<br>
-
 그러나, **<span style="color: #FFAA33;">실제로 문제를 분석해보면</span>**
 
 1. 직원들중 제일 많이 받는 직원 ( 조건 )
@@ -57,8 +52,6 @@ where department_id in (select department_id
 3. 같은 급여를 받는 직원(들) ( 조건 )
 
 으로 해석할수있다.
-
-<br>
 
 이 풀이를 코드로 변환해보면
 
@@ -74,8 +67,6 @@ where salary in (select salary
 ```
 
 3중 서브쿼리가 됨을 알수있다.
-
-<br>
 
 **<span style="color: #FFAA33;">풀이 코드와 나의 코드의 차이는,</span>**
 
@@ -167,11 +158,7 @@ G 선생의 답변으로는
 
 **1. 연산자 사용 시**
 
-**<span style="color: #FFAA33;">하나의 값을 찾은 후 해당 값을 기반으로 비교하는 방식</span>**이므로, 여러 부서가 있다면 **각각 반복적으로 실행** 될 수 있음
-
-→ **Nested Loop이 발생**
-
-<br>
+**<span style="color: #FFAA33;">하나의 값을 찾은 후 해당 값을 기반으로 비교하는 방식</span>**이므로, 여러 부서가 있다면 **각각 반복적으로 실행** 될 수 있음 → **Nested Loop이 발생**
 
 **2. IN 연산자 사용 시**
 
@@ -182,14 +169,10 @@ RDBMS는 IN 연산자를 사용할 때 인덱스 최적화 및 해시 조인 기
 
 주요 단어들만 한번 정리하고 회고를 마쳐보자..!
 
-<br>
-
 **<font color="#4CAF50">Nested Loop ( 중첩 루프 )</font>**
 
 중첩 루프 조인은 두 개의 테이블을 조인 할 때, 한 테이블을 iteration하면서 다른 테이블과 비교하는 방식이다.
 그래서 위와 같은 상황속의 `=` 연산자는 2중 for문을 돌리기 때문에 데이터 양에따라서 성능이 저하된다고 보인다.
-
-<br>
 
 **<font color="#4CAF50">해시조인</font>**
 
@@ -200,8 +183,6 @@ RDBMS는 IN 연산자를 사용할 때 인덱스 최적화 및 해시 조인 기
 그 후 메인이 되는 테이블에서 데이터를 하나씩 읽으면서, 해시 테이블에서 매칭되는 값을 찾아오는것이다.
 
 _~~해시(Key-Value)에 대해서는 알고리즘을 공부하다가보면 자연스럽게 알게될것이다..!~~_
-
-<br>
 
 **<font color="#4CAF50">Batch 처리</font>**
 

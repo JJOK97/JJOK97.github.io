@@ -1,22 +1,28 @@
 ---
-layout: post
-title: '프로젝트 커밋 까보기'
-author: 'Jinseok'
-description: '프로젝트 커밋 까보기기'
-tags: [project]
-excerpt_separator: <!--more-->
+title: '[Project] 모아모아 프로젝트 까보기'
+excerpt: '묵혀둔 프로젝트에서 어떤걸 얻을 수 있었을까?'
+
+categories:
+    - 개발 기록
+tags:
+    - [Project, Review]
+
+permalink: /Dev/moremore-review-1/
+# permalink: /TIL/template/
+
+toc: true
+toc_sticky: true
+
+date: 2025-03-11
+last_modified_at: 2025-03-11
 ---
-
-묵혀둔 프로젝트에서 어떤걸 얻을 수 있었을까?
-
-<!--more-->
 
 오늘은 이전에 진행했던 프로젝트의 커밋내역을 통해서 포트폴리오를 한번 정리해 보려 합니다.  
 최애 프로젝트를 한번 열어봤는데 만들고 수정한 기능만 140개가 되네요..
 
 아래와 같은 것들이 코드리뷰를 기다리고 있었습니다.
 
-![image.png](../assets/img/project1.png)
+![image.png](../../assets/img/project1.png)
 
 <br>
 
@@ -30,5 +36,3 @@ excerpt_separator: <!--more-->
 
 아무튼 이러한 코드리뷰를 지금 부터 한 3~4시간은 더 해야할듯한데, 과거의 진석이가 제발 참신한 개발을 했길 바랍니다.  
 좋은 포트폴리오 나오면 공유를 하도록 하겠습니다..!
-
-<br>
