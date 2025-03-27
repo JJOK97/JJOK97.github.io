@@ -3,7 +3,7 @@ title: '[Java] Abstract과 Interface의 차이'
 excerpt: '상속자들의 오묘한 차이에 대하여'
 
 categories:
-    - 개발 기록
+    - TIL
 tags:
     - [Java, Interface, Abstract]
 
