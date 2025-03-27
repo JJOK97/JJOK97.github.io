@@ -8,7 +8,7 @@ tags:
     - [SQL, Oracle]
 
 # permalink: /Dev/template/
-permalink: /TIL/SQL-OPTIMIZATION/
+permalink: /til/sql-optimization/
 
 toc: true
 toc_sticky: true

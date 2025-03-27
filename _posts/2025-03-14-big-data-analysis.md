@@ -7,7 +7,7 @@ categories:
 tags:
     - [자격증, 빅분기, 빅데이터분석기사]
 
-permalink: /Dev/big-data-analysis/
+permalink: /dev/big-data-analysis/
 # permalink: /TIL/template/
 
 toc: true

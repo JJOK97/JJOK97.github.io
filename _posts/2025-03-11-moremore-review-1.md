@@ -7,7 +7,7 @@ categories:
 tags:
     - [Project, Review]
 
-permalink: /Dev/moremore-review-1/
+permalink: /dev/moremore-review-1/
 # permalink: /TIL/template/
 
 toc: true

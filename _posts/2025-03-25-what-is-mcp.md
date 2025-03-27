@@ -8,7 +8,7 @@ tags:
     - [LLM, MCP, 에이전트, AI]
 
 # permalink: /Dev/template/
-permalink: /TIL/whiat-is-mcp/
+permalink: /til/whiat-is-mcp/
 
 toc: true
 toc_sticky: true

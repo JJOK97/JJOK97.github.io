@@ -8,7 +8,7 @@ tags:
     - [SQL, Oracle]
 
 # permalink: /Dev/template/
-permalink: /TIL/oracle-db-permission/
+permalink: /til/oracle-db-permission/
 
 toc: true
 toc_sticky: true

@@ -8,7 +8,7 @@ tags:
     - [Java]
 
 # permalink: /Dev/template/
-permalink: /TIL/java-module-system/
+permalink: /til/java-module-system/
 
 toc: true
 toc_sticky: true

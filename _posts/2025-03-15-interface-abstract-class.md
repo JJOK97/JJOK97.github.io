@@ -8,7 +8,7 @@ tags:
     - [Java, Interface, Abstract]
 
 # permalink: /Dev/template/
-permalink: /TIL/interface-abstract/
+permalink: /til/interface-abstract/
 
 toc: true
 toc_sticky: true

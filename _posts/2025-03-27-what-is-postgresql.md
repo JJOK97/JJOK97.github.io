@@ -8,7 +8,7 @@ tags:
     - [DBMS, OpenSource, 오픈소스, PostgreSQL, RDBMS]
 
 # permalink: /Dev/template/
-permalink: /TIL/whiat-is-postgresql/
+permalink: /til/whiat-is-postgresql/
 
 toc: true
 toc_sticky: true

@@ -7,7 +7,7 @@ categories:
 tags:
     - [Collaboration, Notion]
 
-permalink: /Dev/collaboration-template/
+permalink: /dev/collaboration-template/
 # permalink: /TIL/template/
 
 toc: true

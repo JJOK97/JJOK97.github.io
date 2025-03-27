@@ -7,7 +7,7 @@ categories:
 tags:
     - [Project, 회고록]
 
-permalink: /Dev/zoom-defense/
+permalink: /dev/zoom-defense/
 # permalink: /TIL/template/
 
 toc: true
