@@ -19,8 +19,9 @@ $(document).ready(function () {
         mainClass: 'mfp-with-zoom', // 줌 효과 클래스
         image: {
             verticalFit: true,
-            // 팝업 이미지 크기 제한
-            cursor: 'mfp-zoom-out-cur', // 줌아웃 커서
+            cursor: 'mfp-zoom-out-cur',
+            // 모바일 대응을 위한 옵션 추가
+            tError: '<a href="%url%">이미지</a> 로드 실패.',
         },
         zoom: {
             enabled: true,
