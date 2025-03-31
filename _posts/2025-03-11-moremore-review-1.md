@@ -22,7 +22,7 @@ last_modified_at: 2025-03-11
 
 아래와 같은 것들이 코드리뷰를 기다리고 있었습니다.
 
-![image.png](../../assets/img/project1.png)
+![프로젝트 커밋 내역](../../assets/img/project1.png)
 
 <br>
 
