@@ -14,7 +14,6 @@ $(document).ready(function () {
     $('.image-popup').magnificPopup({
         type: 'image',
         closeOnContentClick: true,
-        closeBtnInside: true, // 닫기 버튼을 내부로 이동
         fixedContentPos: true,
         mainClass: 'mfp-with-zoom', // 줌 효과 클래스
         image: {
