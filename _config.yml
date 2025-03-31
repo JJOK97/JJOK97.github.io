@@ -285,3 +285,12 @@ defaults:
           sitemap:
               changefreq: weekly
               priority: 0.7
+
+          header:
+              overlay_filter: 0.3
+          gallery:
+              enable: true # 갤러리 기능 활성화
+
+# 커스텀 스크립트 추가
+after_footer_scripts:
+    - /assets/js/custom.js
