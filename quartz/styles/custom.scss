@@ -1,0 +1,35 @@
+@use "./base.scss";
+
+// put your custom CSS here!
+@font-face {
+  font-family: "Pretendard";
+  src: url("/static/fonts/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("/static/fonts/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --headerFont: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+  --bodyFont: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+}
+
+a {
+  color: #3580e3 !important;
+}
+
+a:hover {
+  color: #7aa9e6 !important;
+}
+
+time {
+  font-size: 0.9em;
+}
