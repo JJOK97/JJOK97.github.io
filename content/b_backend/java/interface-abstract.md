@@ -1,5 +1,5 @@
 ---
-title: "Abstract과 Interface의 차이"
+title: "Abstract과 Interface"
 description: "상속자들의 오묘한 차이에 대하여"
 tags:
   - Dev

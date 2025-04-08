@@ -1,5 +1,5 @@
 ---
-title: "추상적인 사고력이 중요한 이유"
+title: "추상 사고력이 중요한 이유"
 description: "개발자의 초심으로 돌아가게 해준 Numpy"
 tags:
   - Dev
