@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-      <title>진석&#039;s 개발 블로그</title>
+      <title>Inside Jinseok</title>
       <link>https://https://jjok97.github.io/</link>
-      <description>최근 10 건 on 진석&#039;s 개발 블로그</description>
+      <description>최근 10 건 on Inside Jinseok</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>Pandas의 배열 참조 방법</title>
