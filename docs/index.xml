@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Inside Jinseok</title>
+      <link>https://https://jjok97.github.io/</link>
+      <description>최근 10 건 on Inside Jinseok</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Pandas의 배열 참조 방법</title>
+    <link>https://https://jjok97.github.io/b_backend/python/list-and-loc</link>
+    <guid>https://https://jjok97.github.io/b_backend/python/list-and-loc</guid>
+    <description>Pandas를 배우기 전까지… 나는 데이터를 다룰 때 항상 하나씩 직접 보면서 처리하는방식에 익숙했다. 그게 디버깅을 실시간으로 하며, 정확한 코드를 짜는거라고 생각을 했으니까.</description>
+    <pubDate>Mon, 07 Apr 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>추상적인 사고력이 중요한 이유</title>
+    <link>https://https://jjok97.github.io/b_backend/python/whit-is-numpy</link>
+    <guid>https://https://jjok97.github.io/b_backend/python/whit-is-numpy</guid>
+    <description>개발자의 초심으로 돌아가게 해준 Numpy</description>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>지난 프로젝트를 통해 얻은 배움..</title>
+    <link>https://https://jjok97.github.io/a_project/z_etc/ai-code-review</link>
+    <guid>https://https://jjok97.github.io/a_project/z_etc/ai-code-review</guid>
+    <description>AI를 통해서 업무 분담을 해보자..!</description>
+    <pubDate>Tue, 01 Apr 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>앞으로의 계획</title>
+    <link>https://https://jjok97.github.io/diary/plans-for-study</link>
+    <guid>https://https://jjok97.github.io/diary/plans-for-study</guid>
+    <description>나는 어디로 가야하는가</description>
+    <pubDate>Mon, 31 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>PostgreSQL...?</title>
+    <link>https://https://jjok97.github.io/b_backend/database/what-is-postgresql</link>
+    <guid>https://https://jjok97.github.io/b_backend/database/what-is-postgresql</guid>
+    <description>요즘 데이터베이스 시장은… 최근 데이터베이스 시장에서는 오픈소스 DBMS가 빠르게 부상하고 있다.</description>
+    <pubDate>Thu, 27 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>MCP...?</title>
+    <link>https://https://jjok97.github.io/etc/whit-is-mcp</link>
+    <guid>https://https://jjok97.github.io/etc/whit-is-mcp</guid>
+    <description>주식보다 빠르게 변하는 AI 생태계..</description>
+    <pubDate>Tue, 25 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Zoom Defense 회고</title>
+    <link>https://https://jjok97.github.io/a_project/_review/zoom-defense-review</link>
+    <guid>https://https://jjok97.github.io/a_project/_review/zoom-defense-review</guid>
+    <description>여러명이서 Git을 사용하려면 어떻게 할까?</description>
+    <pubDate>Fri, 21 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Git Branch 명령어</title>
+    <link>https://https://jjok97.github.io/a_project/git/git-guide-3</link>
+    <guid>https://https://jjok97.github.io/a_project/git/git-guide-3</guid>
+    <description>여러명이서 Git을 사용하려면 어떻게 할까?</description>
+    <pubDate>Mon, 17 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Abstract과 Interface의 차이</title>
+    <link>https://https://jjok97.github.io/b_backend/java/interface-abstract</link>
+    <guid>https://https://jjok97.github.io/b_backend/java/interface-abstract</guid>
+    <description>상속자들의 오묘한 차이에 대하여</description>
+    <pubDate>Sat, 15 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>빅분기 시작!</title>
+    <link>https://https://jjok97.github.io/d_certification/big-data-analysis/big-data-analysis-1</link>
+    <guid>https://https://jjok97.github.io/d_certification/big-data-analysis/big-data-analysis-1</guid>
+    <description>빅데이터 분석 기사 자격증에 대한 고찰</description>
+    <pubDate>Fri, 14 Mar 2025 00:00:00 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
