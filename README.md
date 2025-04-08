@@ -1,18 +1,13 @@
-# Quartz v4
+# Inside Jinseok v4
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+<br>
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+[`jjok97.github.io/`](https://jjok97.github.io/)
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+<br>
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+<hr>
 
-## Sponsors
+### 참고 사이트
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+[Yenarue's Log](https://yenarue.github.io/tip/2020/04/30/Search-SEO/#%EB%84%A4%EC%9D%B4%EB%B2%84-naver)
